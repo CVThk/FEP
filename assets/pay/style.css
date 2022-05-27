@@ -1,0 +1,120 @@
+*{ 
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+   }
+ @font-face {
+	font-family: 'SVN-Futura';
+	font-weight: 500;
+	src: url('https://file.hstatic.net/200000260587/file/svn-futura_medium_2e85fe6785d44ccfa65286bc9f675354.ttf') ;
+}
+.main-footer{
+    font-family:SVN-Futura;
+    font-weight: 500;
+}
+.top-footer{
+    background-color: rgb(234, 233, 233);
+    width: 1550px;
+    height: 77px;
+    left: 0px;
+    right: 1519px;
+}
+
+.top-footer_item i{
+    float: left;
+    margin: 0 auto;
+    padding: 15px auto;
+    padding-left: 20px;
+    margin-top: 28px;
+    padding-right: 15px;
+    margin-left: 30px;
+    font-size: 20px;
+}
+.top-footer_letter h4{
+    float: left;
+    margin: 0 auto;
+    padding: 15px auto;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    font-size: 20px;
+}
+.top-footer_input input{
+    float: left;
+    margin-top: 16px;
+    margin-left: 150px;
+    width: 650px;
+    height: 44px;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+.top-footer_submit input{
+    float: left;
+    margin-top: 16px;
+    background-color: orange;
+    width: 106px;
+    height: 46px;
+    border-radius: 2px;
+    font-weight: bold;
+}
+
+.top-footer_suport i{
+    float: left;
+    margin-top: 28px;
+    margin-left: 30px;
+    font-size: 20px;
+}
+.top-footer_suport h4{
+    float: left;
+    margin-top: 28px;
+    margin-left: 15px;
+}
+.top-footer_suport span{
+    float: left;
+    font-weight: bold;
+    color: darkorange;
+    margin-top: 28px;
+    margin-left: 15px;
+}
+
+.contact__item {
+    display: flex;
+}
+.product{
+    margin-right: 50px;
+}
+.product h4{
+    padding-bottom: 15px;
+}
+.product p{
+    text-align: justify;
+}
+
+.link h4{
+    padding-bottom: 15px;
+}
+.link ul{
+    list-style-type: none;
+}
+.link a{
+    text-decoration: none;
+    color: black;
+}
+.contact h4{
+    padding-bottom: 15px;
+}
+.socialnetwork__tiltle h4{
+    padding-bottom: 15px;
+}
+.contact__icon-cover i{
+    line-height: 25px;
+}
+.contact__item span{
+    line-height: 23px;
+    margin-left: 10px;
+}
+.tiltle__heading{
+    font-size: 25px;
+}

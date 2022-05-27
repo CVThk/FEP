@@ -1,0 +1,14 @@
++ css hết hàng
+    <div class="run-out"><span>hết hàng</span></div>
++ <<
+    <li>
+        <a href="" class="page-number__link">
+            <i class="ti-angle-double-left"></i>
+        </a>
+    </li>
++ >>
+    <li>
+        <a href="" class="page-number__link">
+            <i class="ti-angle-double-right"></i>
+        </a>
+    </li>

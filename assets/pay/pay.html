@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="pay.css">
+    <link rel="stylesheet" href="/assets/fonts/fontawesome-free-5.15.4-web/css/all.css">
+    <title>Thanh toán</title>
+</head>
+<body>
+	<div class="main-formcart">
+		<div class="page1">
+			<div class="top-page1">
+				<div class="top-page1__logo">
+					<a href="/index.html"><img  src="/assets/logo/logo.png" alt="logo"></a>
+				</div>
+				<div class="top-page1__direction">
+					<div class="direction-title">
+						<!-- <a href="#"><p>Giỏ hàng</p></a> -->
+						<a href="/index.html"><p>Trang chủ</p></a>
+					</div>
+					<!-- <div class="direction-icon">
+						<i class="fa fa-angle-right" aria-hidden="true"></i>
+					</div>
+					<div class="direction-ShipmentDetails">
+						<a href="#"><p>Thông tin giao hàng</p></a>
+					</div> -->
+				</div>
+			</div>
+			<div class="title-page1">
+				<h4>Thông tin giao hàng</h4>
+			</div>
+			<!-- <div class="sigin-page1">
+				<p>Bạn đã có tài khoản?</p>
+				<a href="#"> Đăng nhập</a>
+			</div> -->
+			<div class="form-page1">
+				<form action="Nhập thông tin đặt hàng">
+					<table>
+						<div class="form-name">
+							<input type="text" name="Họ và tên" value placeholder="Nhập họ và tên" style="border: 1px silver solid; border-radius: 4px;width: 573px;height: 45px;font-size: 18px;font-family: SVN-Futura; padding-left: 20px;">
+						</div>
+						<div class="form-email">
+							<input type="email" name="email" id="email" value placeholder="Nhập email của bạn" style="border: 1px silver solid; border-radius: 4px;width: 379px;height: 45px;font-size: 18px;font-family: SVN-Futura; padding-left: 20px;">
+							<input type="number" name="SDT" id="SDT" value placeholder="Số điện thoại" style="border: 1px silver solid; border-radius: 4px; width: 180px; height: 45px;padding-left: 7px;font-size: 18px;font-family: SVN-Futura; padding-left: 20px;" >
+						</div>
+						<div class="address">
+							<input type="text" name="address" id="address" value placeholder="Nhập địa chỉ của bạn" style="border: 1px silver solid; border-radius: 4px; width: 573px; height: 45px;font-size: 18px; font-family: SVN-Futura; padding-left: 20px;">
+						</div>
+						<div class="province">
+							<label class="field-province" for="customer_shipping_province">Tỉnh / thành:  </label>
+							<select name="District" id="customer_shipping_province" onclick="districtF()">
+								<option value="null" selected="">Chọn tỉnh / thành </option>
+								<option value="HCM">Hồ Chí Minh</option>
+							</select>
+						</div>
+						<div class="district">
+							<label class="field-district" for="customer_shipping_district"> Quận / Huyện:  </label>
+							<select name="district" id="customer_shipping_district" onclick="wardsF()">
+								<option value="null" selected="">Chọn Quận / Huyện</option>
+								<script>
+									function districtF() {
+										var districtList = document.getElementById('customer_shipping_province').getElementsByTagName('option');
+										var districtCoverDis = document.getElementById('customer_shipping_district');
+										districtCoverDis.innerHTML = '<option value="null" selected="">Chọn Quận / Huyện<option>'
+										for(var i = 0; i < districtList.length; i++) {
+											if(districtList[i].selected) {
+												if(districtList[i].getAttribute("value") == "HCM") {
+													districtCoverDis.innerHTML = 
+													'<option value="null" selected="">Chọn Quận / Huyện</option>'
+													+'<option value="Q1">Quận 1</option>'
+													+'<option value="Q2">Quận 2</option>'
+													+'<option value="Q3">Quận 3</option>'
+													+'<option value="Q4">Quận 4</option>'
+													+'<option value="Q5">Quận 5</option>'
+													+'<option value="Q6">Quận 6</option>'
+													+'<option value="Q7">Quận 7</option>'
+													+'<option value="Q8">Quận 8</option>'
+													+'<option value="Q9">Quận 9</option>'
+													+'<option value="Q10">Quận 10</option>'
+													+'<option value="Q11">Quận 11</option>'
+													+'<option value="Q12">Quận 12</option>'
+													+'<option value="QBT">Quận Bình Tân</option>'
+													+'<option value="QBT">Quận Bình Thạnh</option>'
+													+'<option value="QGV">Quận Gò Vấp</option>'
+													+'<option value="QPN">Quận Phú Nhuận</option>'
+													+'<option value="QTB">Quận Tân Bình</option>'
+													+'<option value="QTP">Quận Tân Phú</option>'
+													+'<option value="QTD">Quận Thủ Đức</option>'
+													+'<option value="HBC">Huyện Bình Chánh</option>'
+													+'<option value="HCG">Huyện Cần Giờ</option>'
+													+'<option value="HCC">Huyện Củ Chi</option>'
+													+'<option value="HHM">Huyện Hóc Môn</option>'
+													+'<option value="HNB">Huyện Nhà Bè</option>'
+												}
+											}
+										}	
+								 	}														
+								</script>
+							</select>
+						</div>
+						<div class="wards">
+							<label class="field-wards" for="customer_shipping_wards"> Phường / Xã:  </label>
+							<select name="wards" id="customer_shipping_wards">
+								<option value="null" selected="">Chọn Phường / Xã</option>
+								<script>
+									function wardsF() {
+										var disList = document.getElementById('customer_shipping_district').getElementsByTagName('option');
+										var wardCover = document.getElementById('customer_shipping_wards');
+										wardCover.innerHTML = '<option value="null" selected="">Chọn Phường / Xã</option>';
+										for(var i = 0; i < disList.length; i++) {
+											if(disList[i].selected) {
+												if(disList[i].getAttribute('value') == "Q1") {
+													wardCover.innerHTML =
+													'<option value="null" selected="">Chọn Phường / Xã</option>'
+													+'<option value="PBN" >Bến Nghé</option>'
+													+'<option value="PBT" >Bến Thành</option>'
+													+'<option value="PCK" >Cầu Kho</option>'
+													+'<option value="PCOL" >Cầu Ông Lãnh</option>'
+													+'<option value="PCG" >Cô Giang</option>'
+													+'<option value="PDK" >Đa Kao</option>'
+													+'<option value="PNCT" >Nguyễn Cư Trinh</option>'
+													+'<option value="PNTB" >Nguyễn Thái Bình</option>'
+													+'<option value="PPNL" >Phạm Ngũ Lão</option>'
+													+'<option value="PTD" >Tân Định</option>'
+												} else if(disList[i].getAttribute('value') == "Q2") {
+													wardCover.innerHTML =
+													'<option value="null" selected="">Chọn Phường / Xã</option>'
+													+'<option value="PAK" >An Khánh</option>'
+													+'<option value="PTD" >Thảo Điền</option>'
+													+'<option value="PTT" >Thủ Thiêm</option>'
+													+'<option value="PALD" >An Lợi Đông</option>'
+													+'<option value="PAP" >An Phú</option>'
+													+'<option value="PBA" >Bình An</option>'
+													+'<option value="PBK" >Bình Khánh</option>'
+													+'<option value="PBTD" >Bình Trưng Đông</option>'
+													+'<option value="PBTT" >Bình Trưng Tây</option>'
+													+'<option value="PTML" >Thạnh Mỹ Lợi</option>'
+													+'<option value="PCL" >Cát Lái</option>'
+												}
+											}
+										}
+									}
+								</script>
+							</select>
+						</div>
+	
+						<div class="shippingmethod">
+							<div class="title_boxshippingmethod">
+								<h2>Phương thức vận chuyển</h2>
+							</div>
+							<div class="box_shippingmethod" style="border: 1px silver solid; border-radius: 4px; width: 574px;height: 200px;">
+								
+								<div class="box_shippingmethod-icon">
+									<i class="fa fa-archive" aria-hidden="true"></i>
+								</div>
+							
+								<div class="box_shippingmethod-title">
+									<p>Vui lòng chọn tỉnh / thành để có danh sách phương thức vận chuyển.</p>
+								</div>
+							</div>
+						</div>
+						<div class="paymentmothod">
+							<div class="title_paymentmethod">
+								<h2>Phương thức thanh toán</h2>
+							</div>
+							<div class="box_paymentmethod" >
+								<div class="box-input_paymentmethod">
+									<input type="radio" name="box-input_paymentmethod"">
+								</div>
+								<div class="box-icon_paymentmethod">
+									<i class="fa fa-money" aria-hidden="true"></i>
+								</div>
+								<div class="box-title_paymentmethod">
+									<p>Thanh toán khi giao hàng (COD)</p>
+								</div>
+							</div>
+						</div>
+						<div class="bottom-page1">
+							<div class="return-cart">
+								<a href="#">Giỏ hàng</a>
+							</div>
+							<div class="submit-form">
+								<input type="submit" name="Hoàn tất" id="submit" value="Hoàn tất đơn hàng">
+							</div>
+						</div>
+					</table>
+				</form>
+			</div>
+		</div>
+		   
+		<div class="page2">
+			<div class="order">
+				<div class="product">
+					<div class="product-img">
+						<img src="/assets/img/dep_gucci_web_slide_sandal_black_like_auth/1.jpg" alt="product_1" width="90px" height="auto">
+					</div>
+					<div class="product-title">
+						<h4>DÉP GUCCI WEB SLIDE SANDAL BLACK LIKE AUTH</h4>
+					</div>
+					<div class="product-size">
+						<h5>38</h5>
+					</div>
+					<div class="product-price">
+						<h5>898.000 ₫</h5>
+					</div>
+				</div>
+				<div class="page2-voucher">
+					<div class="page2-voucher__input">
+						<input type="text" name="voucher" id="voucher" value placeholder=" MÃ GIẢM GIÁ">
+					</div>
+					</hr style="color: silver;">
+					<div class="page2-voucher__submit">
+						<input type="submit" name="submit" id="submit" value="Sử Dụng" style="background-color:silver; text-align: center; width: 99px; height: 44px;">
+					</div>
+				</div>
+				<div class="div-page2__bill">
+					<div class="page2-bill__price">
+						<div class="bill-price__title">
+							<h4>Tạm tính</h4>
+						</div>
+						<div class="bill-price__money">
+							<h4>898.000 ₫</h4>
+						</div>
+					</div>
+					<div class="page2-transport__fee">
+						<div class="transport-fee__title">
+							<h4>Phí vận chuyển</h4>
+						</div>
+						<div class="transport-fee__money">
+							<h4>---</h4>
+						</div>
+					</div>
+					<div class="page2-intomoney">
+						<div class="intomoney-title">
+							<h4>Tổng cộng</h4>
+						</div>
+						<div class="intomoney-money">
+							<h4>898.000 ₫</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+   
+</body>
+</html>

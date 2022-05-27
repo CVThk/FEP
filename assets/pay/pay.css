@@ -1,0 +1,253 @@
+
+@font-face {
+	font-family: 'SVN-Futura';
+	font-weight: 500;
+	src: url('https://file.hstatic.net/200000260587/file/svn-futura_medium_2e85fe6785d44ccfa65286bc9f675354.ttf') ;
+}
+body{
+    font-family: SVN-Futura;
+}
+.main-formcart{
+    display: flex;
+}
+.page1{
+    width: 50%;
+    height: auto;
+    margin-top: 30px;
+    margin-left: 205px;
+    font-size: 20px;
+}
+.page2{
+    width: 50%;
+    height: auto;
+    border-left: 1px black solid;
+    }
+.top-page1__logo img{
+    display: block;
+    width: 90px;
+    height: auto;
+    margin-left: 37px;
+}
+.top-page1__direction{
+    padding-bottom: 10px;
+    padding-left: 35px;
+    display: flex;
+}
+.top-page1__direction a{
+    text-decoration:none ;
+    list-style: none;
+    color: black;
+}
+.direction-icon{
+    margin-left: 5px;
+}
+.direction-ShipmentDetails{
+    margin-left: 5px;
+}
+.title-page1 h4{
+    padding-bottom: 10px;
+    padding-left: 35px;
+}
+.sigin-page1{
+    display: flex;
+    padding-bottom: 20px;
+    padding-left: 35px;
+}
+.sigin-page1 a{
+    text-decoration: none;
+    color: deepskyblue;
+}
+
+.form-page1 form {
+    padding-bottom: 20px;
+    padding-left: 35px;  
+}
+.form-page1 form input{
+    margin-bottom:  13px;
+}
+.province{
+    display: inline-block;
+    border: 1px silver solid;
+    border-radius: 4px;
+    width: 150px;
+    height: 45px;
+    font-size: 15px;
+    padding: 0 0.93333em;
+    margin-right: 18px;
+}
+.province label{
+    display: inline;
+}
+.district{
+    display: inline-block;
+    border: 1px silver solid;
+    border-radius: 4px;
+    width: 150px;
+    height: 45px;
+    font-size: 15px;
+    padding: 0 0.93333em;
+    margin-right: 18px;
+}
+.wards{
+    display: inline-block;
+    border: 1px silver solid;
+    border-radius: 4px;
+    width: 150px;
+    height: 45px;
+    font-size: 15px;
+    padding: 0 0.93333em;  
+    margin-bottom: 15px;
+}
+.shippingmethod{
+    text-align: center;
+}
+.shippingmethod h2{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.shippingmethod i{
+    font-size:  75px;
+    margin-top: 38px;
+}
+i.fa.fa-archive {
+    margin-bottom: 10px;
+}
+.shippingmethod p{
+    font-size: 17px;
+}
+.box_paymentmethod{
+    border: 1px silver solid;
+    border-radius: 4px;
+    width:575px;
+    height: 75px;
+    display: flex;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+.title_paymentmethod h2{
+    margin-top: 45px;
+    margin-bottom: 10px;
+}
+.box-input_paymentmethod input{
+    width: 20px;
+    height: 30px;
+    margin-top: 1em;
+    margin-left: 20px;
+}
+.box-icon_paymentmethod i{
+    width: 23px;
+    height: 30px;
+    margin-top: 1.23em;
+    margin-left: 15px;
+}
+.box-title_paymentmethod p{
+    margin-top: 1em;
+    margin-left: 15px;
+}
+.bottom-page1 a{
+    text-decoration: none;
+    color: dodgerblue;
+    float: left;
+    margin-top: 35px;
+}
+.bottom-page1 input{
+    border: 1px skyblue solid;
+    border-radius: 4px;
+    float: right;
+    margin-right: 120px;
+    margin-top: 25px;
+    width: 164px;
+    height: 57px;
+    font-size: 15px;
+    background-color: skyblue;
+}
+
+.product-img img{
+    border: 1px silver solid;
+    border-radius: 4px;
+    margin-top: 53px;
+    margin-left: 45px;
+    float: left;
+}
+.product-title{
+    float: left;
+    margin-top: 70px;
+    margin-left: 20px;
+    margin-bottom: 22px;
+}
+.product-size{
+    float: left;
+    margin-top: 92px;
+    margin-left: -180px;
+    color: silver;
+    margin-bottom: 22px;
+}
+.product-price h5{
+    float: right;
+    margin-top: 70px;
+    margin-right: 200px;
+    margin-bottom: 22px;
+}
+.page2-voucher{
+    clear: both;
+}
+.page2-voucher__input input{
+    margin-left: 43px;
+    margin-top: 30px;
+    border: 1px silver solid;
+    border-radius: 4px;
+    width: 335px;
+    height: 44px;
+    margin-right: 15px;
+    float: left;
+}
+
+.page2-voucher__submit input{
+    margin-top: 30px;
+    border: 1px silver solid;
+    border-radius: 4px;
+}
+.div-page2__bill{
+    clear: both;
+}
+.page2-bill__price{
+    margin-left: 43px;
+    margin-top: 40px;
+}
+.bill-price__title h4{
+    float: left;
+}
+.bill-price__money{
+    float: right;
+    margin-right: 255px;
+}
+.page2-transport__fee{
+    clear: both;
+    margin-left: 43px;
+    margin-top: 40px;
+}
+.transport-fee__title{
+    margin-top: 15px;
+    float: left;
+}
+.transport-fee__money{
+    float: right;
+    margin-right: 255px;
+    margin-top: 15px;
+}
+.page2-intomoney{
+    clear: both;
+    margin-left: 43px;
+    margin-top: 40px;
+}
+.intomoney-title {
+    float: left;
+    margin-top: 15px;
+}
+.intomoney-money{
+    float: right;
+    margin-right: 255px;
+    margin-top: 15px;
+}
