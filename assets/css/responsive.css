@@ -67,7 +67,8 @@
         margin-top: 10px;
         padding-bottom: 0;
     }
-    .offset-1 {
+    .offset-1,
+    .offset-2 {
         margin-left: 0;
     }
 }
@@ -144,9 +145,49 @@
     }
     .filter-element {
         display: none;
+        margin-left: 0;
     }
     .filter-element:last-child {
         display: block;
     }
     
+
+    
+    .run-out span {
+        font-size: 12px;
+        right: -2%;
+    }
+    /* Page buy */
+    .product__show-help--describe {font-size: 22px;}
+    .product__show-benefit > #title {font-size: 18px;}
+    .benefit-text {font-size: 12px;}
+    .product__imgs-pc {display: none;}
+    .product__imgs.page-buy {
+        display: block;
+    }
+    .product__imgs-mobi {
+        display: flex;
+        width: 100%;
+    }
+    .product__imgs-mobi li {
+        width: calc(100% / 7);
+    }
+    .product__imgs #main-img img {margin-left: 0; margin-bottom: 10px;}
+    .product__imgs-mobi li img,
+    .product__imgs ul li img {
+        width: calc(100% - 8px);
+        margin: 0 4px;
+    }
+    .product__show-imgs img {
+        width: 100%;
+    }
+    .product__similar-title {
+        text-align: center;
+    }
+    .product__describe-custom-reduced,
+    .product__describe-custom-input,
+    .product__describe-custom-increase {
+        /* width: 60px; */
+        /* height: 40px; */
+    }
 }

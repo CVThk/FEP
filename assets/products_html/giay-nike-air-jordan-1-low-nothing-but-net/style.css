@@ -11,11 +11,10 @@
 
 .product__linked.page-buy{
     width: 100%;
-    /* background-color: #F9F9F9; */
 }
 
 .product__link.page-buy{
-    width: 1170px;
+    width: 100%;
     margin: 0px auto;
     padding: 10px 5px;
 }
@@ -27,30 +26,31 @@
 }
 
 .product__detail.page-buy{
-    width: 1170px;
-    margin: 25px auto;
+    width: 100%;
+    /* margin: 25px auto; */
 }
 
 .product__imgs.page-buy{
-    width: 720px;
+    display: flex;
     margin: 15px 0px;
 }
 
 .product__imgs ul, #main-img{
-    float: left;
+    
 }
-
+.product__imgs-mobi {display: none;}
 .product__imgs ul{
-    width: 80px;
+    
 }
 
 .product__imgs ul li{
     list-style: none;
 }
 
-.product__imgs ul li img{
+.product__imgs ul li img {
     width: 65px;
-    height: 65px;
+    /* height: 65px; */
+    object-fit: contain;
     cursor: pointer;
     transition: 0.5s;
     opacity: 70%;
@@ -65,14 +65,16 @@
 }
 
 .product__imgs #main-img{
-    width: 625px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
+    
 }
 
 .product__imgs #main-img img{
-    width: 620px;
-    height: 600px;
-    margin-left: 25px;
+    width: 90%;
+    margin-left: 10%;
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     -ms-transition: all 1s ease;
@@ -91,25 +93,23 @@ hr{
 }
 
 .product__describe{
-    width: 400px;
-    margin-left: 60px;
-    margin-bottom: 50px;
-    float: left;
+    
 }
 
 .product__describe-infor-name h1{
     color: var(--gray-dark-1);
-    font-size: 30px;
+    font-size: 24px;
+    margin-bottom: 6px;
 }
 
 .product__describe-infor-name #code{
     color: var(--gray);
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .product__describe-infor-name #number{
     color: var(--gray-dark);
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .product__describe-infor-name h2{
@@ -135,18 +135,15 @@ hr{
 }
 
 .product__describe-size{
-    height: 70px;
     margin-bottom: 15px;
 }
 
 .product__describe-size p{
-    /* margin-top: 10px; */
+    
 }
 
 .product__describe-size button{
-    /* margin-top: 10px; */
-    margin-left: 10px;
-    width: 50px;
+    display: block;
     box-shadow: 0px 0px 1px 0px var(--gray-dark);
     border: 1px solid var(--gray-dark-1);
     border-radius: 5px;
@@ -154,10 +151,13 @@ hr{
     background-color: transparent;
     transition: all 0.5s;
     cursor: pointer;
+    padding: 4px 6px;
+    margin: 0 6px;
 }
+.product__describe-size > .cover-button {display: flex;}
 
 .product__describe-size button h2 {
-    font-size: 28px;
+    font-size: 20px;
 }
 
 .product__describe-size button:hover, .product__describe-size button:active, .product__describe-size button:focus{
@@ -229,37 +229,40 @@ hr{
 }
 
 .product__describe-choose{
-    display: inline-block;
-    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
 }
-
-.product__describe-choose--add a button{
+.product__describe-choose--add a, 
+.product__describe-choose--buy a {display: block; width: 100%;}
+.product__describe-choose--add a button, 
+.product__describe-choose--buy a button {
     border: none;
-    background-color: #ECC800;
-    width: 190px;
+    width: 100%;
     height: 50px;
-    border-radius: 70px;
-    font-size: 15px;
-    box-shadow: 0px 5px #848600;
+    border-radius: 5px;
+    font-size: 14px;
     cursor: pointer;
 }
+.product__describe-choose--add a button {
+    background-color: #ffeee8;
+    color: var(--danger);
+}
+.product__describe-choose--buy a button {
+    background-color: var(--danger);
+    color: #fff;
+}
 
-.product__describe-choose--buy a button{
-    border: none;
+.product__describe-choose--add,
+.product__describe-choose--buy {
+    width: 45%;
+}
+
+.product__describe-choose--add a button:hover {
+    background-color: #fcf5f2;
+}
+.product__describe-choose--buy a button:hover {
     background-color: #ED0000;
-    color: white;
-    width: 190px;
-    height: 50px;
-    border-radius: 70px;
-    font-size: 15px;
-    box-shadow: 0px 5px #6f0101;
-    cursor: pointer;
-}
-
-.product__describe-choose--add a button:hover, .product__describe-choose--buy a button:hover{
-    background-color: var(--gray);
-    color: var(--yellow);
-    box-shadow: 0px 5px rgb(42, 42, 42);
 }
 
 .product__describe-contact{
@@ -309,23 +312,19 @@ hr{
 }
 
 .product__show-help{
-    height: 70px;
     width: 100%;
     display: flex;
     justify-content: center;
     text-align: center;
-    font-size: 25px;
+    font-size: 35px;
     font-weight: 450;
     color: var(--gray-dark-1);
-    align-items: center;
-    justify-content: center;
+    margin-bottom: 10px;
 }
 
 .product__show-help--describe{
-    height: 50%;
-    width: 10%;
+    width: 20%;
     border-bottom: 3px solid var(--red);
-    margin-right: 20px;
 }
 
 .product__show-help--describe a{
@@ -350,13 +349,12 @@ hr{
 }
 .product__show-imgs img{
     width: 60%;
-    height: 60%;
+    /* height: 60%; */
     margin-bottom: 20px;
 }
 
 .product__show-benefit{
     width: 100%;
-    height: 330px;
     margin: 30px auto;
     color: var(--gray-dark-1);
 }
@@ -376,6 +374,7 @@ hr{
 
 .benefit-text {
     padding: 8px 0;
+    margin: 0;
 }
 
 .color-red {
@@ -415,7 +414,6 @@ hr{
 
 .product__link {
     text-decoration: none;
-    position: relative;
 }
 .product__img {
     max-width: 100%;
