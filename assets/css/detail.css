@@ -207,10 +207,10 @@
 .run-out span {
     text-transform: uppercase;
     color: var(--white);
-    font-size: 18px;
+    font-size: 14px;
     position: absolute;
-    top: 16%;
-    right: 0;
+    top: 13%;
+    right: -1%;
     transform: rotate(45deg);
 }
 .product__caption {

@@ -55,7 +55,7 @@
         height: calc(var(--line-height) * 2);
     }
     .product__price {
-        font-size: 16px;
+        font-size: 13px;
     }
     .top-footer {
         display: none;
@@ -75,7 +75,18 @@
 
 /* Tablet */
 @media (min-width: 740px) and (max-width: 1023px) {
-    
+    .run-out span {
+        font-size: 10px;
+        top: 14%;
+        right: -3%;
+    }
+
+    .product__describe-infor-price {
+        font-size: 18px;
+    }
+    .product__describe-infor-name h1 {
+        font-size: 20px;
+    }
 }
 
 /* Mobile */
@@ -163,7 +174,7 @@
     
     .run-out span {
         font-size: 12px;
-        right: -2%;
+        right: -1%;
     }
     /* Page buy */
     .product__show-help--describe {font-size: 22px;}
@@ -197,5 +208,16 @@
     .product__describe-custom-increase {
         /* width: 60px; */
         /* height: 40px; */
+    }
+
+    .product__describe-infor-price {
+        font-size: 16px;
+    }
+    .product__describe-infor-name h1 {
+        font-size: 18px;
+    }
+    .product__describe-infor-name #number,
+    .product__describe-infor-name #code {
+        font-size: 16px;
     }
 }

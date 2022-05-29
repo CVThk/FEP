@@ -119,6 +119,7 @@ ul, h1, h2, h3, h4, h5, h6 {
 }
 .header__web-menu-tablet {
     display: none;
+    cursor: pointer;
 }
 .header__web-cart a i,
 .header__web-menu-tablet i{
