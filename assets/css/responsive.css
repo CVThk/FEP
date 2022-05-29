@@ -151,7 +151,15 @@
         display: block;
     }
     
-
+    .title__heading h4 {
+        font-size: 14px;
+    }
+    .footer-description,
+    .link > ul > li > a,
+    .contact__description,
+    .contact__icon-cover {
+        font-size: 13px;
+    }
     
     .run-out span {
         font-size: 12px;

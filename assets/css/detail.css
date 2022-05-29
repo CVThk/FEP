@@ -221,7 +221,7 @@
 .product__caption-link.detail {
     text-decoration: none;
     color: var(--text-color);
-    font-size: 13px;
+    font-size: 16px;
 }
 .product__price {
     font-size: 14px;
