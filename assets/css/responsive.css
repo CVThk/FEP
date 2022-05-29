@@ -33,20 +33,6 @@
     .block-title h2 {
         font-size: 20px;
     }
-    .sale {
-        --size: 40px;
-        line-height: var(--size);
-        width: var(--size);
-        height: var(--size);
-        font-size: 12px;
-    }
-    .sale.detail {
-        --size: 35px;
-        line-height: var(--size);
-        width: var(--size);
-        height: var(--size);
-        font-size: 12px;
-    }
     .product__caption-link {
         font-size: 16px;
         font-weight: 600;
@@ -76,9 +62,10 @@
 /* Tablet */
 @media (min-width: 740px) and (max-width: 1023px) {
     .run-out span {
-        font-size: 10px;
-        top: 14%;
-        right: -3%;
+        font-size: 22px;
+        top: 12%;
+        right: 2%;
+        transform: rotate(40deg);
     }
 
     .product__describe-infor-price {
@@ -140,6 +127,22 @@
         /* padding: 0 12px; */
         margin-top: calc(var(--height-header) - var(--height-header-menu) + 80px);
     }
+    
+    .sale {
+        --size: 40px;
+        line-height: var(--size);
+        width: var(--size);
+        height: var(--size);
+        font-size: 12px;
+    }
+    .sale.detail {
+        --size: 35px;
+        line-height: var(--size);
+        width: var(--size);
+        height: var(--size);
+        font-size: 12px;
+    }
+
 
     .breadcrumb .item-descript,
     .breadcrumb .item-icon {
