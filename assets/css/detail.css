@@ -207,7 +207,7 @@
 .run-out span {
     text-transform: uppercase;
     color: var(--white);
-    font-size: 20px;
+    font-size: 14px;
     position: absolute;
     top: 12%;
     right: -2%;
