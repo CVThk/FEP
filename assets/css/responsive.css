@@ -1,7 +1,7 @@
 /* PC */
 @media (min-width: 1024px) {
     .hideMenuTabMobi#menu-tab-mobi {transform: translateX(-100%);}
-    .overplay {display: none;}
+    /* .overplay-menu {display: none;} */
 }
 /* Mobile & Tablet */
 @media (max-width: 1023px) {

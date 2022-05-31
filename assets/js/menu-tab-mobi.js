@@ -1,18 +1,20 @@
 // xử lý ẩn hiện menu trên tablet + mobile khi click vào icon menu
 var iconMenu = document.querySelector('.header__web-menu-tablet');
-var overPlay = document.querySelector('.overplay');
+var overPlayMenu = document.querySelector('#overplay-menu');
+
 var menu = document.querySelector('#menu-tab-mobi');
 iconMenu.onclick = function() {
     menu.classList.toggle('showMenuTabMobi');
-    overPlay.classList.toggle('show');
+    overPlayMenu.classList.toggle('show');
     if(iconMenu.style.display == 'none') {
         menu.classList.remove('showMenuTabMobi');
-        overPlay.classList.remove('show');
+        overPlayMenu.classList.remove('show');
     }
 }
-overPlay.onclick = function() {
-    overPlay.classList.toggle('show');
+overPlayMenu.onclick = function() {
+    overPlayMenu.classList.toggle('show');
     menu.classList.toggle('showMenuTabMobi');
+    console.log(overPlayMenu.classList)
 }
 
 
@@ -21,7 +23,7 @@ var iconDownList = document.querySelectorAll('.cover-icon');
 var subMenuDropdownList = document.querySelectorAll('.sub-menu-dropdown');
 
 for(var i = 0; i < iconDownList.length; i++) {
-    iconDownList[i].onclick = function(e) {
+    iconDownList[i].onclick = function() {
         var iconClose = this.querySelector('.ti-close');
         var iconDown = this.querySelector('.fa-angle-down');
         if(iconClose.style.display != 'flex') {
@@ -40,11 +42,4 @@ function indexArrayIcon(icon) {
         if(iconDownList[i] == icon) {return i;}
     }
     return -1;
-}
-function menuTabMobiShow() {
-    
-}
-
-function menuTabMobiHide() {
-
 }

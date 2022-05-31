@@ -1,13 +1,21 @@
-.overplay.search {
-    background-color: transparent;
-}
-.overplay {
+
+#overplay-menu {
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0.2);
+    display: none;
+}
+#overplay-menu.show {display: block;}
+#overplay-search {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: none;
 }
 
@@ -39,8 +47,6 @@ ul, h1, h2, h3, h4, h5, h6 {
 
 .header__web-selection{
     width: 400px;
-    /* margin-top: 35px; */
-    /* flex: 1; */
     font-size: 14px;
     display: flex;
     align-items: center;
@@ -269,6 +275,7 @@ ul, h1, h2, h3, h4, h5, h6 {
     overflow-y: auto;
     padding-bottom: 40px;
     transition: transform linear 0.5s;
+    z-index: 9999;
 }
 #menu-tab-mobi ul {
     list-style: none;

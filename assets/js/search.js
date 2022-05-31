@@ -1,19 +1,10 @@
-// var searchInput = document.getElementById('search__input');
-// searchInput.oninput = function(e) {
-//     console.clear()
-//     var productList = document.getElementsByClassName('product');
-//     for(var i = 0; i < productList.length; i++) {
-//         //console.log(searchInput.value)
-//         if(productList[i].querySelector('.product__caption-link').textContent.includes(searchInput.value)) {
-//             console.log(productList[i].querySelector('.product__caption-link').textContent)
-//         }
-//     }
-// }
+
 
 
 var searchInput = document.getElementById('search__input');
 var resultInput = document.querySelector('.result-search');
-var overPlay = document.querySelector('.overplay.search');
+var overPlay = document.querySelector('#overplay-search');
+
 
 overPlay.onclick = function() {
     resultInput.style.display = 'none';
