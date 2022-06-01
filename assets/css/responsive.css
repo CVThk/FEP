@@ -61,11 +61,12 @@
 
 /* Tablet */
 @media (min-width: 740px) and (max-width: 1023px) {
+    .run-out {
+        width: 70px;
+        height: 70px;
+    }
     .run-out span {
         font-size: 10px;
-        top: 12%;
-        right: 0%;
-        transform: rotate(45deg);
     }
 
     .product__describe-infor-price {
@@ -175,10 +176,10 @@
         font-size: 13px;
     }
     
-    .run-out span {
+    /* .run-out span {
         font-size: 16px;
         right: 2%;
-    }
+    } */
     /* Page buy */
     .product__show-help--describe {font-size: 22px;}
     .product__show-benefit > #title {font-size: 18px;}
