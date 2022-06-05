@@ -399,7 +399,6 @@ input[name="rSlide"] {position: absolute; visibility: hidden;}
 }
 .dot.active {background-color: var(--danger);}
 .dot:hover {
-    background-color: #fff;
     cursor: pointer;
 }
 #rS1:checked ~ .S1 {margin-left: 0;}
