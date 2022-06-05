@@ -43,6 +43,15 @@ buttons.forEach(function(btn, index){
 })
 
 
+//ẨN HIỆN BOX CART
+document.getElementById("showcart").style.display = "none";
+function showcart() {
+    var x = document.getElementById("showcart");
+    if(x.style.display == "none")
+      x.style.display = "block";
+    else x.style.display = "none";
+}
+
 
 
 

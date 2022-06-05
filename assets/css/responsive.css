@@ -109,6 +109,7 @@
     .header__web-search .search__input {
         font-size: 15px;
         line-height: 36px;
+        margin-left: 5%;
     }
     .header__web-search .search__btn{
         height: 36px;
@@ -122,6 +123,10 @@
     .header__web-cart a i,
     .header__web-menu-tablet i{
         font-size: 20px;
+    }
+    .product__cart{
+        right: 8%;
+        top: 86%;
     }
 
     .body {
