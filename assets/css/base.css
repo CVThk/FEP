@@ -32,6 +32,8 @@ html {
     --height-header: 160px;
     --height-header-web: 100px;
     --height-header-menu: calc(var(--height-header) - var(--height-header-web));
+
+    --height-slideshow: 400px;
 }
 
 .active {

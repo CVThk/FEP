@@ -26,6 +26,28 @@
         </script>
         <!-- Body -->
         <div class="body">
+            <div class="slideshow">
+                <div class="slides">
+                    <input type="radio" name="rSlide" id="rS1" checked>
+                    <input type="radio" name="rSlide" id="rS2">
+                    <input type="radio" name="rSlide" id="rS3">
+                    <div class="slide S1">
+                        <img src="/assets/img/slider/s1.JPG" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="/assets/img/slider/s2.JPG" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="/assets/img/slider/s3.JPG" alt="">
+                    </div>
+                </div>
+                <div class="dots">
+                    <label for="rS1" class="dot active"></label>
+                    <label for="rS2" class="dot"></label>
+                    <label for="rS3" class="dot"></label>
+                </div>
+            </div>
+            <div class="distance-slideshow"></div>
             <div class="container-xl">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12">
@@ -735,5 +757,7 @@
         <script>
             $('.footer').load('footer.html')
         </script>
+
+        <script src="/assets/js/slideshow.js"></script>
 </body>
 </html>
