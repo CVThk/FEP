@@ -89,7 +89,7 @@
         width: 70%;
     }
     .slideshow {
-        top: 20%;
+        top: 40%;
     }
     .header {
         height: calc(var(--height-header) - var(--height-header-menu) + var(--height-logo) + 20px);
