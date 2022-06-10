@@ -24,7 +24,7 @@
 
 var dots = document.getElementsByClassName('dot');
 for(var i = 0; i < dots.length; i++) {
-    console.log(dots[i])
+    // console.log(dots[i])
     dots[i].onclick = function(e) {
         var dotActive = document.querySelector('.dot.active');
         dotActive.classList.remove('active');

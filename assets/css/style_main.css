@@ -140,7 +140,7 @@ ul, h1, h2, h3, h4, h5, h6 {
 .header__web-search .search__btn a{
     color: var(--gray-dark);
 }
-
+.header__web-cart {position: relative; width: 100%;}
 .header__web-cart, 
 .header__web-menu-tablet {
     width: var(--height-header-web);

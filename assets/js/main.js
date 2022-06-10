@@ -42,14 +42,28 @@ buttons.forEach(function(btn, index){
   })
 })
 
+// Ẩn/hiện no-product in cart
+checkCart();
+function checkCart() {
+  var cartListProduct = document.getElementsByClassName('cart__box');
+  var noProduct = document.querySelector('.no-product');
+  if(cartListProduct.length == 0) {
+    noProduct.style.display = 'flex';
+  } else {noProduct.style.display = 'none';}
+}
 
-//ẨN HIỆN BOX CART
-document.getElementById("showcart").style.display = "none";
-function showcart() {
-    var x = document.getElementById("showcart");
-    if(x.style.display == "none")
-      x.style.display = "block";
-    else x.style.display = "none";
+// Thêm product vào cart
+var btnAdd = document.querySelector('.product__describe-choose--add');
+btnAdd.onclick = function() {
+  var cartListProduct = document.querySelector('.cart-list-product');
+  var content = cartListProduct.innerHTML;
+  var srcImg = document.getElementById('one').src;
+  var nameProduct = document.querySelector('.product__describe-infor-name').querySelector('h1').innerText;
+  var price = document.querySelector('.product__describe-infor-price--current').innerText;
+  var numberProduct = document.querySelector('.product__describe-custom-input').value;
+  content = '<div class="cart__box"><div class="cart__img"><img src="'+srcImg+'" alt=""></div><div class="cart__info"><div class="cart__title"><h6>'+nameProduct+'</h6></div><div class="cart__int text-muted"><div class="cart__number"><h6>'+numberProduct+'</h6></div><h6>x</h6><div class="cart__price"><h6>'+price+'</h6></div></div></div></div>' + content;
+  cartListProduct.innerHTML = content;
+  checkCart();
 }
 
 
