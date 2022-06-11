@@ -233,4 +233,20 @@
     .product__describe-infor-name #code {
         font-size: 16px;
     }
+
+
+
+    .cover-list {
+        display: block;
+    }
+    .cover-item,
+    .cover-item select {
+        width: 100%;
+    }
+    .pay-pc {
+        display: none;
+    }
+    .pay-mobi {
+        display: block;
+    }
 }

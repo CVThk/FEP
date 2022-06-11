@@ -4,638 +4,716 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="pay.css">
+	
+    <link rel="stylesheet" href="/assets/bootstrap5/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/style_main.css">
+	<link rel="stylesheet" href="./pay.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
     <link rel="stylesheet" href="/assets/fonts/fontawesome-free-5.15.4-web/css/all.css">
     <title>Thanh toán</title>
 </head>
 <body>
-	<div class="main-formcart">
-		<div class="page1">
-			<div class="top-page1">
-				<div class="top-page1__logo">
-					<a href="/index.html"><img  src="/assets/logo/logo.png" alt="logo"></a>
-				</div>
-				<div class="top-page1__direction">
-					<div class="direction-title">
-						<!-- <a href="#"><p>Giỏ hàng</p></a> -->
-						<a href="/index.html"><p>Trang chủ</p></a>
+	<!-- main-formcart -->
+	<div class="row main-formcart">
+		<div class="col-lg-6 col-xs-12">
+			<div class="page1">
+				<div class="top-page1">
+					<div class="top-page1__logo">
+						<a href="/index.html"><img  src="/assets/logo/logo.png" alt="logo"></a>
 					</div>
-					<!-- <div class="direction-icon">
-						<i class="fa fa-angle-right" aria-hidden="true"></i>
+					<div class="top-page1__direction">
+						<div class="direction-title">
+							<a href="/index.html"><p>Trang chủ</p></a>
+						</div>
 					</div>
-					<div class="direction-ShipmentDetails">
-						<a href="#"><p>Thông tin giao hàng</p></a>
-					</div> -->
 				</div>
-			</div>
-			<div class="title-page1">
-				<h4>Thông tin giao hàng</h4>
-			</div>
-			<!-- <div class="sigin-page1">
-				<p>Bạn đã có tài khoản?</p>
-				<a href="#"> Đăng nhập</a>
-			</div> -->
-			<div class="form-page1">
-				<form action="Nhập thông tin đặt hàng">
-					<table>
-						<div class="form-name">
-							<input type="text" name="Họ và tên" value placeholder="Nhập họ và tên" style="border: 1px silver solid; border-radius: 4px;width: 573px;height: 45px;font-size: 18px;font-family: SVN-Futura; padding-left: 20px;">
-						</div>
-						<div class="form-email">
-							<input type="email" name="email" id="email" value placeholder="Nhập email của bạn" style="border: 1px silver solid; border-radius: 4px;width: 379px;height: 45px;font-size: 18px;font-family: SVN-Futura; padding-left: 20px;">
-							<input type="number" name="SDT" id="SDT" value placeholder="Số điện thoại" style="border: 1px silver solid; border-radius: 4px; width: 180px; height: 45px;padding-left: 7px;font-size: 18px;font-family: SVN-Futura; padding-left: 20px;" >
-						</div>
-						<div class="address">
-							<input type="text" name="address" id="address" value placeholder="Nhập địa chỉ của bạn" style="border: 1px silver solid; border-radius: 4px; width: 573px; height: 45px;font-size: 18px; font-family: SVN-Futura; padding-left: 20px;">
-						</div>
-						<div class="province">
-							<label class="field-province" for="customer_shipping_province">Tỉnh / thành:  </label>
-							<select name="District" id="customer_shipping_province" onclick="districtF()">
-								<option value="null" selected="">Chọn tỉnh / thành </option>
-								<option value="HCM">Hồ Chí Minh</option>
-							</select>
-						</div>
-						<div class="district">
-							<label class="field-district" for="customer_shipping_district"> Quận / Huyện:  </label>
-							<select name="district" id="customer_shipping_district" onclick="wardsF()">
-								<option value="null" selected="">Chọn Quận / Huyện</option>
-								<script>
-									function districtF() {
-										var districtList = document.getElementById('customer_shipping_province').getElementsByTagName('option');
-										var districtCoverDis = document.getElementById('customer_shipping_district');
-										districtCoverDis.innerHTML = '<option value="null" selected="">Chọn Quận / Huyện<option>'
-										for(var i = 0; i < districtList.length; i++) {
-											if(districtList[i].selected) {
-												if(districtList[i].getAttribute("value") == "HCM") {
-													districtCoverDis.innerHTML = 
-													'<option value="null" selected="">Chọn Quận / Huyện</option>'
-													+'<option value="Q1">Quận 1</option>'
-													+'<option value="Q2">Quận 2</option>'
-													+'<option value="Q3">Quận 3</option>'
-													+'<option value="Q4">Quận 4</option>'
-													+'<option value="Q5">Quận 5</option>'
-													+'<option value="Q6">Quận 6</option>'
-													+'<option value="Q7">Quận 7</option>'
-													+'<option value="Q8">Quận 8</option>'
-													+'<option value="Q9">Quận 9</option>'
-													+'<option value="Q10">Quận 10</option>'
-													+'<option value="Q11">Quận 11</option>'
-													+'<option value="Q12">Quận 12</option>'
-													+'<option value="QBT">Quận Bình Tân</option>'
-													+'<option value="QBT">Quận Bình Thạnh</option>'
-													+'<option value="QGV">Quận Gò Vấp</option>'
-													+'<option value="QPN">Quận Phú Nhuận</option>'
-													+'<option value="QTB">Quận Tân Bình</option>'
-													+'<option value="QTP">Quận Tân Phú</option>'
-													+'<option value="QTD">Quận Thủ Đức</option>'
-													+'<option value="HBC">Huyện Bình Chánh</option>'
-													+'<option value="HCG">Huyện Cần Giờ</option>'
-													+'<option value="HCC">Huyện Củ Chi</option>'
-													+'<option value="HHM">Huyện Hóc Môn</option>'
-													+'<option value="HNB">Huyện Nhà Bè</option>'
-												}
-											}
-										}	
-								 	}														
-								</script>
-							</select>
-						</div>
-						<div class="wards">
-							<label class="field-wards" for="customer_shipping_wards"> Phường / Xã:  </label>
-							<select name="wards" id="customer_shipping_wards">
-								<option value="null" selected="">Chọn Phường / Xã</option>
-								<script>
-									function wardsF() {
-										var disList = document.getElementById('customer_shipping_district').getElementsByTagName('option');
-										var wardCover = document.getElementById('customer_shipping_wards');
-										wardCover.innerHTML = '<option value="null" selected="">Chọn Phường / Xã</option>';
-										for(var i = 0; i < disList.length; i++) {
-											if(disList[i].selected) {
-												if(disList[i].getAttribute('value') == "Q1") {
-													wardCover.innerHTML =
-													'<option value="null" selected="">Chọn Phường / Xã</option>'
-													+'<option value="PBN" >Bến Nghé</option>'
-													+'<option value="PBT" >Bến Thành</option>'
-													+'<option value="PCK" >Cầu Kho</option>'
-													+'<option value="PCOL" >Cầu Ông Lãnh</option>'
-													+'<option value="PCG" >Cô Giang</option>'
-													+'<option value="PDK" >Đa Kao</option>'
-													+'<option value="PNCT" >Nguyễn Cư Trinh</option>'
-													+'<option value="PNTB" >Nguyễn Thái Bình</option>'
-													+'<option value="PPNL" >Phạm Ngũ Lão</option>'
-													+'<option value="PTD" >Tân Định</option>'
-												} else if(disList[i].getAttribute('value') == "Q2") {
-													wardCover.innerHTML =
-													'<option value="null" selected="">Chọn Phường / Xã</option>'
-													+'<option value="PAK" >An Khánh</option>'
-													+'<option value="PTD" >Thảo Điền</option>'
-													+'<option value="PTT" >Thủ Thiêm</option>'
-													+'<option value="PALD" >An Lợi Đông</option>'
-													+'<option value="PAP" >An Phú</option>'
-													+'<option value="PBA" >Bình An</option>'
-													+'<option value="PBK" >Bình Khánh</option>'
-													+'<option value="PBTD" >Bình Trưng Đông</option>'
-													+'<option value="PBTT" >Bình Trưng Tây</option>'
-													+'<option value="PTML" >Thạnh Mỹ Lợi</option>'
-													+'<option value="PCL" >Cát Lái</option>'
-												}
-												else if(disList[i].getAttribute('value') == "Q3") {
-													wardCover.innerHTML =
-													'<option value="null" selected="">Chọn Phường / Xã</option>'
-													+'<option value="P1" >1</option>'
-													+'<option value="P2" >2</option>'
-													+'<option value="P3" >3</option>'
-													+'<option value="P4" >4</option>'
-													+'<option value="P5" >5</option>'
-													+'<option value="P6" >6</option>'
-													+'<option value="P7" >7</option>'
-													+'<option value="P8" >8</option>'
-													+'<option value="P9" >9</option>'
-													+'<option value="P10" >10</option>'
-													+'<option value="P11" >11</option>'
-													+'<option value="P12" >12</option>'
-													+'<option value="P13" >13</option>'
-													+'<option value="P14L" >14</option>'
-												}
-												else if(disList[i].getAttribute('value') == "Q4") {
-														wardCover.innerHTML =
-														'<option value="null" selected="">Chọn Phường / Xã</option>'
-														+'<option value="P1" >1</option>'
-														+'<option value="P2" >2</option>'
-														+'<option value="P3" >3</option>'
-														+'<option value="P4" >4</option>'
-														+'<option value="P5" >5</option>'
-														+'<option value="P6" >6</option>'
-														+'<option value="P8" >8</option>'
-														+'<option value="P9" >9</option>'
-														+'<option value="P10" >10</option>'
-														+'<option value="P12" >12</option>'
-														+'<option value="P13" >13</option>'
-														+'<option value="P14L" >14</option>'
-														+'<option value="P15 >15</option>'
-														+'<option value="P16" >16</option>'
-														+'<option value="P18" >18</option>'
-												}
-												else if(disList[i].getAttribute('value') == "Q5") {
-														wardCover.innerHTML =
-														'<option value="null" selected="">Chọn Phường / Xã</option>'
-														+'<option value="P1" >1</option>'
-														+'<option value="P2" >2</option>'
-														+'<option value="P3" >3</option>'
-														+'<option value="P4" >4</option>'
-														+'<option value="P5" >5</option>'
-														+'<option value="P6" >6</option>'
-														+'<option value="P7" >7</option>'
-														+'<option value="P8" >8</option>'
-														+'<option value="P9" >9</option>'
-														+'<option value="10" >10</option>'
-														+'<option value="P11" >11</option>'
-														+'<option value="P12L" >12</option>'
-														+'<option value="P13" >13</option>'
-														+'<option value="P14" >14</option>'
-												}
-												else if(disList[i].getAttribute('value') == "Q6") {
-														wardCover.innerHTML =
-														'<option value="null" selected="">Chọn Phường / Xã</option>'
-														+'<option value="P1" >1</option>'
-														+'<option value="P2" >2</option>'
-														+'<option value="P3" >3</option>'
-														+'<option value="P4" >4</option>'
-														+'<option value="P5" >5</option>'
-														+'<option value="P6" >6</option>'
-														+'<option value="P7" >7</option>'
-														+'<option value="P8" >8</option>'
-														+'<option value="P9" >9</option>'
-														+'<option value="P10" >10</option>'
-														+'<option value="P11" >11</option>'
-														+'<option value="P12" >12</option>'
-														+'<option value="P113" >13</option>'
-														+'<option value="P14" >14</option>'
-												}
-												else if(disList[i].getAttribute('value') == "Q7") {
-														wardCover.innerHTML =
-														'<option value="null" selected="">Chọn Phường / Xã</option>'
-														+'<option value="PTTD" >Tân Thuận Đông</option>'
-														+'<option value="PTTT" >Tân Thuận Tây</option>'
-														+'<option value="PTK" >Tây kiểng</option>'
-														+'<option value="PTH" >Tân Hưng</option>'
-														+'<option value="PTQ" >Tân Quy</option>'
-														+'<option value="PTP" >Tân Phú</option>'
-														+'<option value="PBT" >Bình Thuận</option>'
-														+'<option value="PPT" >Phú Thuận </option>'
-														+'<option value="PPM" >Phú Mỹ</option>'
-												}
-												else if(disList[i].getAttribute('value') == "Q8") {
-														wardCover.innerHTML =
-														'<option value="null" selected="">Chọn Phường / Xã</option>'
-														+'<option value="PXC" >Xóm Củi</option>'
-														+'<option value="PHP" >Hưng Phú</option>'
-														+'<option value="PBA" >Bình An</option>'
-														+'<option value="PCH" >Chánh Hưng</option>'
-														+'<option value="PRO" >Rạch Ông</option>'
-												}
-												else if(disList[i].getAttribute('value') == "Q9") {
-														wardCover.innerHTML =
-														'<option value="null" selected="">Chọn Phường / Xã</option>'
-														+'<option value="PHP" >Hiệp Phú</option>'
-														+'<option value="PLB" >Long Bình</option>'
-														+'<option value="PLP" >Long Phước</option>'
-														+'<option value="PLTM" >Long Thạnh Mỹ</option>'
-														+'<option value="PLT" >Long Trường</option>'
-														+'<option value="PPH" >Phú Hữu</option>'
-														+'<option value="PPB" >Phước Bình</option>'
-														+'<option value="PPLA" > Phước Long A</option>'
-														+'<option value="PPLB" >Phước Long B</option>'
-														+'<option value="PTP" >Tân Phú</option>'
-														+'<option value="PTNPA" >Tăng Nhơn Phú A</option>'
-														+'<option value="PTNPB" >Tăng Nhơn Phú B</option>'
-														+'<option value="PTT" >Trường Thạnh</option>'
-												}
-												else if(disList[i].getAttribute('value') == "Q10") {
-														wardCover.innerHTML =
-														'<option value="null" selected="">Chọn Phường / Xã</option>'
-														+'<option value="P1" >1</option>'
-														+'<option value="P2" >2</option>'
-														+'<option value="P4" >4</option>'
-														+'<option value="P5" >5</option>'
-														+'<option value="P6" >6</option>'
-														+'<option value="P7" >7</option>'
-														+'<option value="P8" >8</option>'
-														+'<option value="P9" >9</option>'
-														+'<option value="P10" >10</option>'
-														+'<option value="P11" >11</option>'
-														+'<option value="P12" >12</option>'
-														+'<option value="P13" >13</option>'
-														+'<option value="P14" >14</option>'
-														+'<option value="P15" >15</option>'
-												}
-												else if(disList[i].getAttribute('value') == "Q11") {
-														wardCover.innerHTML =
-														'<option value="null" selected="">Chọn Phường / Xã</option>'
-														+'<option value="P1" >1</option>'
-														+'<option value="P2" >2</option>'
-														+'<option value="P3" >3</option>'
-														+'<option value="P4" >4</option>'
-														+'<option value="P5" >5</option>'
-														+'<option value="P6" >6</option>'
-														+'<option value="P7" >7</option>'
-														+'<option value="P8" >8</option>'
-														+'<option value="P9" >9</option>'
-														+'<option value="P10" >10</option>'
-														+'<option value="P11" >11</option>'
-														+'<option value="P12" >12</option>'
-														+'<option value="P13" >13</option>'
-														+'<option value="P14" >14</option>'
-														+'<option value="P15" >15</option>'
-														+'<option value="P16" >16</option>'
-												}
-												else if(disList[i].getAttribute('value') == "Q12") {
-														wardCover.innerHTML =
-														'<option value="null" selected="">Chọn Phường / Xã</option>'
-														+'<option value="PAPD" >An Phú Đông</option>'
-														+'<option value="PDHT" >Đông Hưng Thuận</option>'
-														+'<option value="PHT" >Hiệp Thành</option>'
-														+'<option value="PTCH" >Tân Chánh Hiệp</option>'
-														+'<option value="PTHT" >Tân Hưng Thuận</option>'
-														+'<option value="PTTH" >Tân Thới Hiệp</option>'
-														+'<option value="PTTN" >Tân Thới Nhất</option>'
-														+'<option value="PTL" >Thạnh Lộc</option>'
-														+'<option value="PTX" >Thạnh Xuân</option>'
-														+'<option value="PTA" >Thới An</option>'
-														+'<option value="PTMT" >Trung Mỹ Tây</option>'
-												}
-												else if(disList[i].getAttribute('value') == "QBT") {
-														wardCover.innerHTML =
-														'<option value="null" selected="">Chọn Phường / Xã</option>'
-														+'<option value="P1" >1</option>'
-														+'<option value="P2" >2</option>'
-														+'<option value="P3" >3</option>'
-														+'<option value="P5" >5</option>'
-														+'<option value="P6" >6</option>'
-														+'<option value="P7" >7</option>'
-														+'<option value="P11" >11</option>'
-														+'<option value="P12" >12</option>'
-														+'<option value="P13" >13</option>'
-														+'<option value="P14" >14</option>'
-														+'<option value="P15" >15</option>'
-														+'<option value="P17" >17</option>'
-														+'<option value="P19" >19</option>'
-														+'<option value="P21" >21</option>'
-														+'<option value="P22" >22</option>'
-														+'<option value="P24" >24</option>'
-														+'<option value="P25" >25</option>'
-														+'<option value="P26" >26</option>'
-														+'<option value="P27" >27</option>'
-														+'<option value="P28" >28</option>'
-												}
-												else if(disList[i].getAttribute('value') == "QBTA") {
-														wardCover.innerHTML =
-														'<option value="null" selected="">Chọn Phường / Xã</option>'
-														+'<option value="P1" >1</option>'
-														+'<option value="P2" >2</option>'
-														+'<option value="P3" >3</option>'
-														+'<option value="P4" >4</option>'
-														+'<option value="P5" >5</option>'
-														+'<option value="P6" >6</option>'
-														+'<option value="P7" >7</option>'
-														+'<option value="P8" >8</option>'
-														+'<option value="P9" >9</option>'
-														+'<option value="P10" >10</option>'
-														+'<option value="P11" >11</option>'
-														+'<option value="P12" >12</option>'
-														+'<option value="P13" >13</option>'
-														+'<option value="P14" >14</option>'
-														+'<option value="P15" >15</option>'
-														+'<option value="PAL" >An Lạc</option>'
-														+'<option value="PALA" >An Lạc A</option>'
-														+'<option value="PBHH" >Bình Hưng Hòa</option>'
-														+'<option value="PBHHA" >Bình Hưng Hòa A</option>'
-														+'<option value="PBHHB" >Bình Hưng Hòa B</option>'
-														+'<option value="PBTD" >Bình Trị Đông</option>'
-														+'<option value="PBTDA" >Bình Trị Đông A</option>'
-														+'<option value="PBTDB" >Bình Trị Đông B</option>'
-														+'<option value="PTT" >Tân Tạo</option>'
-														+'<option value="PTTA" >Tân Tạo A</option>'
-												}
-												else if(disList[i].getAttribute('value') == "QGV") {
-														wardCover.innerHTML =
-														'<option value="null" selected="">Chọn Phường / Xã</option>'
-														+'<option value="P1" >1</option>'
-														+'<option value="P3" >3</option>'
-														+'<option value="P4" >4</option>'
-														+'<option value="P5 >5</option>'
-														+'<option value="P7" >7</option>'
-														+'<option value="P10" >10</option>'
-														+'<option value="P11" >11</option>'
-														+'<option value="P12" >12</option>'
-														+'<option value="P13" >13</option>'
-														+'<option value="P14" >14</option>'
-														+'<option value="P15" >15</option>'
-														+'<option value="P16" >16</option>'
-														+'<option value="P17" >17</option>'
-														+'<option value="P6" >6</option>'
-														+'<option value="P8" >8</option>'
-														+'<option value="P9" >9</option>'
-												}
-												else if(disList[i].getAttribute('value') == "QPN") {
-														wardCover.innerHTML =
-														'<option value="null" selected="">Chọn Phường / Xã</option>'
-														+'<option value="P1" >1</option>'
-														+'<option value="P2" >2</option>'
-														+'<option value="P3" >3</option>'
-														+'<option value="P5" >5</option>'
-														+'<option value="P6" >6</option>'
-														+'<option value="P7" >7</option>'
-														+'<option value="P11" >11</option>'
-														+'<option value="P12 >12</option>'
-														+'<option value="P13" >13</option>'
-														+'<option value="P14" >14</option>'
-														+'<option value="P15" >15</option>'
-														+'<option value="P17" >17</option>'
-												}
-												else if(disList[i].getAttribute('value') == "QTB") {
-														wardCover.innerHTML =
-														'<option value="null" selected="">Chọn Phường / Xã</option>'
-														+'<option value="P1" >1</option>'
-														+'<option value="P2" >2</option>'
-														+'<option value="P3" >3</option>'
-														+'<option value="P5" >5</option>'
-														+'<option value="P6" >6</option>'
-														+'<option value="P7" >7</option>'
-														+'<option value="P8" >8</option>'
-														+'<option value="P9" >9</option>'
-														+'<option value="P10" >10</option>'
-														+'<option value="P11" >11</option>'
-														+'<option value="P12" >12</option>'
-														+'<option value="P13" >13</option>'
-														+'<option value="P14" >14</option>'
-														+'<option value="P15" >15</option>'
-												}
-												else if(disList[i].getAttribute('value') == "QTD") {
-														wardCover.innerHTML =
-														'<option value="null" selected="">Chọn Phường / Xã</option>'
-														+'<option value="PAK" >An Khánh</option>'
-														+'<option value="PALD" >An Lợi Đông</option>'
-														+'<option value="PAP" >An Phú</option>'
-														+'<option value="PBC" >Bình Chiểu</option>'
-														+'<option value="PBT" >Bình Thọ</option>'
-														+'<option value="PBTD" >Bình Trưng Đông</option>'
-														+'<option value="PBTT" >Bình Trưng Tây</option>'
-														+'<option value="PCL" >Cát lái</option>'
-														+'<option value="PHBC" >Hiệp Bình Chánh</option>'
-														+'<option value="PHBP" >Hiệp Bình Phước</option>'
-														+'<option value="PHP" >Hiệp Phú</option>'
-														+'<option value="PLC" >Linh Chiểu</option>'
-														+'<option value="PLD" >Linh Đông</option>'
-														+'<option value="PLT" >Linh Tây</option>'
-														+'<option value="PLT" >Linh Trung</option>'
-														+'<option value="PLX" >Linh Xuân</option>'
-														+'<option value="PLB" >Long Bình</option>'
-														+'<option value="PLP" >Long Phước</option>'
-														+'<option value="PLTM" >Long Thạnh Mỹ</option>'
-														+'<option value="PLT" >Long Trường</option>'
-														+'<option value="PPH" >Phú Hữu</option>'
-														+'<option value="PPB" >Phước Bình</option>'
-														+'<option value="PPLA" >Phước Long A</option>'
-														+'<option value="PPLB" >Phước Long B</option>'
-														+'<option value="PTB" >Tam bình</option>'
-														+'<option value="PTP" >Tam Phú</option>'
-														+'<option value="PTNPA" >Tăng Nhơn Phú A</option>'
-														+'<option value="PTNPB" >Tăng Nhơn Phú B</option>'
-														+'<option value="PTP" >Tân Phú</option>'
-														+'<option value="PTML" >Thạnh Mỹ Lợi</option>'
-														+'<option value="PTD" >Thảo Điền</option>'
-														+'<option value="PTT" >Thủ Thiêm</option>'
-														+'<option value="PTT" >Trường Thạnh</option>'
-														+'<option value="PTT" >Trường Thọ</option>'
-												}
-												else if(disList[i].getAttribute('value') == "HBC") {
-														wardCover.innerHTML =
-														'<option value="null" selected="">Chọn Phường / Xã</option>'
-														+'<option value="PAPT" >An Phú Tây</option>'
-														+'<option value="PBC" >Bình Chánh</option>'
-														+'<option value="PBH" >Bình Hưng</option>'
-														+'<option value="PBL" >Bình Lợi</option>'
-														+'<option value="PDP" >Đa Phước</option>'
-														+'<option value="PHL" >Hưng Long</option>'
-														+'<option value="PLMX" >Lê Minh Xuân</option>'
-														+'<option value="PPVH" >Phạm Văn Hai</option>'
-														+'<option value="PPP" >Phong Phú</option>'
-														+'<option value="PQD" >Quy Đức</option>'
-														+'<option value="PTK" >Tân Kiên</option>'
-														+'<option value="PTN" >Tân Nhựt</option>'
-														+'<option value="PTQT" >Tân Quý Tây</option>'
-														+'<option value="PVLA" >Vĩnh Lộc A</option>'
-														+'<option value="PVLB" >Vĩnh Lộc B</option>'
-												}
-												else if(disList[i].getAttribute('value') == "QTP") {
-														wardCover.innerHTML =
-														'<option value="null" selected="">Chọn Phường / Xã</option>'
-														+'<option value="PHT" >Hiệp Tân</option>'
-														+'<option value="PHT" >Hòa Thạnh</option>'
-														+'<option value="PPTH" >Phú Thọ Hòa</option>'
-														+'<option value="PPT" >Phú Trung</option>'
-														+'<option value="PSK" >Sơn Kỳ</option>'
-														+'<option value="PTQ" >Tân Quý</option>'
-														+'<option value="PTSN" >Tân Sơn Nhì</option>'
-														+'<option value="PTT" >Tân Thành</option>'
-														+'<option value="PTT" >Tân Thới Hòa</option>'
-														+'<option value="PTT" >Tây Thạnh</option>'
-												}
-												else if(disList[i].getAttribute('value') == "HCC") {
-														wardCover.innerHTML =
-														'<option value="null" selected="">Chọn Phường / Xã</option>'
-														+'<option value="XANT" >An Nhơn Tây</option>'
-														+'<option value="XAP" >An Phú</option>'
-														+'<option value="XBM" >Bình Mỹ</option>'
-														+'<option value="XHM" >Hòa Phú</option>'
-														+'<option value="XND" >Nhuận Đức</option>'
-														+'<option value="XPVC" >Phạm Văn Cội</option>'
-														+'<option value="XPHD >Phú Hòa Đông</option>'
-														+'<option value="XPMH" >Phú Mỹ Hưng</option>'
-														+'<option value="XPH" >Phước Hiệp</option>'
-														+'<option value="XPT" >Phước Thạnh</option>'
-														+'<option value="XPVA" >Phước Vĩnh An</option>'
-														+'<option value="XTAH" >Tân An Hội</option>'
-														+'<option value="XTPT" >Tân Phú Trung</option>'
-														+'<option value="XTTD" >Tân Thạnh Đông</option>'
-														+'<option value="XTTT" >Tân Thạnh Tây</option>'
-														+'<option value="XTTH" >Tân Thông Hội</option>'
-														+'<option value="XTM" >Thái Mỹ</option>'
-														+'<option value="XTA" >Trung An</option>'
-														+'<option value="XTHL" >Trung Hạ Lập</option>'
-														+'<option value="XTLT" >Trung Lập Thượng</option>'
-												}
-												else if(disList[i].getAttribute('value') == "HHM") {
-														wardCover.innerHTML =
-														'<option value="null" selected="">Chọn Phường / Xã</option>'
-														+'<option value="XBD" >Bà Điểm</option>'
-														+'<option value="XDT" >Đông Thạnh</option>'
-														+'<option value="XNB" >Nhị bình</option>'
-														+'<option value="XTTN" >Tân Thới Nhì</option>'
-														+'<option value="XTX" >Tân Xuân</option>'
-														+'<option value="XTTT >Thới Tam Thôn</option>'
-														+'<option value="XTC" >Trung Chánh</option>'
-														+'<option value="XXTD" >Xuân Thới Đông</option>'
-														+'<option value="XXTT" >Xuân Thới Xuân</option>'
-														+'<option value="XXTT" >Xuân Thới Thượng</option>'
-												}
-												else if(disList[i].getAttribute('value') == "HNB") {
-														wardCover.innerHTML =
-														'<option value="null" selected="">Chọn Phường / Xã</option>'
-														+'<option value="XHP" >Hiệp Phước</option>'
-														+'<option value="XLT" >Long Thới</option>'
-														+'<option value="XND" >Nhơn Đức</option>'
-														+'<option value="XPX" >Phú Xuân</option>'
-														+'<option value="XPK" >Phước Kiến</option>'
-														+'<option value="XPL" >Phước Lộc</option>'
-												}
-											}
-										}
-									}
-								</script>
-							</select>
-						</div>
-	
-						<div class="shippingmethod">
-							<div class="title_boxshippingmethod">
-								<h2>Phương thức vận chuyển</h2>
+				<div class="title-page1">
+					<h4>Thông tin giao hàng</h4>
+				</div>
+				<div class="form-page1">
+					<form action="Nhập thông tin đặt hàng">
+						<table>
+							<div class="form-name">
+								<input type="text" name="Họ và tên" value placeholder="Nhập họ và tên" style="border: 1px silver solid; border-radius: 4px;width: 100%;height: 45px;font-size: 18px;font-family: SVN-Futura; padding-left: 20px;">
 							</div>
-							<div class="box_shippingmethod" style="border: 1px silver solid; border-radius: 4px; width: 574px;height: 200px;">
-								
-								<div class="box_shippingmethod-icon">
-									<i class="fa fa-archive" aria-hidden="true"></i>
-								</div>
+							<div class="form-email" style="display: flex;">
+								<input type="email" name="email" id="email" value placeholder="Nhập email của bạn" style="border: 1px silver solid; border-radius: 4px;width: 60%;height: 45px;font-size: 18px;font-family: SVN-Futura; padding-left: 20px;">
+								<input type="number" name="SDT" id="SDT" value placeholder="Số điện thoại" style="border: 1px silver solid; border-radius: 4px; width: 38%; height: 45px;font-size: 18px;font-family: SVN-Futura; padding-left: 20px; margin-left: 2%;" >
+							</div>
 							
-								<div class="box_shippingmethod-title">
-									<p>Vui lòng chọn tỉnh / thành để có danh sách phương thức vận chuyển.</p>
+							<div class="cover-list">
+								<div class="cover-item">
+									<label class="field-province" for="customer_shipping_province">Tỉnh / thành:  </label>
+									<select name="District" id="customer_shipping_province" onclick="districtF()">
+										<option value="null" selected="">Chọn tỉnh / thành </option>
+										<option value="HCM">Hồ Chí Minh</option>
+									</select>
+								</div>
+								<div class="cover-item">
+									<label class="field-district" for="customer_shipping_district"> Quận / Huyện:  </label>
+									<select name="district" id="customer_shipping_district" onclick="wardsF()">
+										<option value="null" selected="">Chọn Quận / Huyện</option>
+										<script>
+											function districtF() {
+												var districtList = document.getElementById('customer_shipping_province').getElementsByTagName('option');
+												var districtCoverDis = document.getElementById('customer_shipping_district');
+												districtCoverDis.innerHTML = '<option value="null" selected="">Chọn Quận / Huyện<option>'
+												for(var i = 0; i < districtList.length; i++) {
+													if(districtList[i].selected) {
+														if(districtList[i].getAttribute("value") == "HCM") {
+															districtCoverDis.innerHTML = 
+															'<option value="null" selected="">Chọn Quận / Huyện</option>'
+															+'<option value="Q1">Quận 1</option>'
+															+'<option value="Q2">Quận 2</option>'
+															+'<option value="Q3">Quận 3</option>'
+															+'<option value="Q4">Quận 4</option>'
+															+'<option value="Q5">Quận 5</option>'
+															+'<option value="Q6">Quận 6</option>'
+															+'<option value="Q7">Quận 7</option>'
+															+'<option value="Q8">Quận 8</option>'
+															+'<option value="Q9">Quận 9</option>'
+															+'<option value="Q10">Quận 10</option>'
+															+'<option value="Q11">Quận 11</option>'
+															+'<option value="Q12">Quận 12</option>'
+															+'<option value="QBT">Quận Bình Tân</option>'
+															+'<option value="QBT">Quận Bình Thạnh</option>'
+															+'<option value="QGV">Quận Gò Vấp</option>'
+															+'<option value="QPN">Quận Phú Nhuận</option>'
+															+'<option value="QTB">Quận Tân Bình</option>'
+															+'<option value="QTP">Quận Tân Phú</option>'
+															+'<option value="QTD">Quận Thủ Đức</option>'
+															+'<option value="HBC">Huyện Bình Chánh</option>'
+															+'<option value="HCG">Huyện Cần Giờ</option>'
+															+'<option value="HCC">Huyện Củ Chi</option>'
+															+'<option value="HHM">Huyện Hóc Môn</option>'
+															+'<option value="HNB">Huyện Nhà Bè</option>'
+														}
+													}
+												}	
+											 }														
+										</script>
+									</select>
+								</div>
+								<div class="cover-item">
+									<label class="field-wards" for="customer_shipping_wards"> Phường / Xã:  </label>
+									<select name="wards" id="customer_shipping_wards">
+										<option value="null" selected="">Chọn Phường / Xã</option>
+										<script>
+											function wardsF() {
+												var disList = document.getElementById('customer_shipping_district').getElementsByTagName('option');
+												var wardCover = document.getElementById('customer_shipping_wards');
+												wardCover.innerHTML = '<option value="null" selected="">Chọn Phường / Xã</option>';
+												for(var i = 0; i < disList.length; i++) {
+													if(disList[i].selected) {
+														if(disList[i].getAttribute('value') == "Q1") {
+															wardCover.innerHTML =
+															'<option value="null" selected="">Chọn Phường / Xã</option>'
+															+'<option value="PBN" >Bến Nghé</option>'
+															+'<option value="PBT" >Bến Thành</option>'
+															+'<option value="PCK" >Cầu Kho</option>'
+															+'<option value="PCOL" >Cầu Ông Lãnh</option>'
+															+'<option value="PCG" >Cô Giang</option>'
+															+'<option value="PDK" >Đa Kao</option>'
+															+'<option value="PNCT" >Nguyễn Cư Trinh</option>'
+															+'<option value="PNTB" >Nguyễn Thái Bình</option>'
+															+'<option value="PPNL" >Phạm Ngũ Lão</option>'
+															+'<option value="PTD" >Tân Định</option>'
+														} else if(disList[i].getAttribute('value') == "Q2") {
+															wardCover.innerHTML =
+															'<option value="null" selected="">Chọn Phường / Xã</option>'
+															+'<option value="PAK" >An Khánh</option>'
+															+'<option value="PTD" >Thảo Điền</option>'
+															+'<option value="PTT" >Thủ Thiêm</option>'
+															+'<option value="PALD" >An Lợi Đông</option>'
+															+'<option value="PAP" >An Phú</option>'
+															+'<option value="PBA" >Bình An</option>'
+															+'<option value="PBK" >Bình Khánh</option>'
+															+'<option value="PBTD" >Bình Trưng Đông</option>'
+															+'<option value="PBTT" >Bình Trưng Tây</option>'
+															+'<option value="PTML" >Thạnh Mỹ Lợi</option>'
+															+'<option value="PCL" >Cát Lái</option>'
+														}
+														else if(disList[i].getAttribute('value') == "Q3") {
+															wardCover.innerHTML =
+															'<option value="null" selected="">Chọn Phường / Xã</option>'
+															+'<option value="P1" >1</option>'
+															+'<option value="P2" >2</option>'
+															+'<option value="P3" >3</option>'
+															+'<option value="P4" >4</option>'
+															+'<option value="P5" >5</option>'
+															+'<option value="P6" >6</option>'
+															+'<option value="P7" >7</option>'
+															+'<option value="P8" >8</option>'
+															+'<option value="P9" >9</option>'
+															+'<option value="P10" >10</option>'
+															+'<option value="P11" >11</option>'
+															+'<option value="P12" >12</option>'
+															+'<option value="P13" >13</option>'
+															+'<option value="P14L" >14</option>'
+														}
+														else if(disList[i].getAttribute('value') == "Q4") {
+																wardCover.innerHTML =
+																'<option value="null" selected="">Chọn Phường / Xã</option>'
+																+'<option value="P1" >1</option>'
+																+'<option value="P2" >2</option>'
+																+'<option value="P3" >3</option>'
+																+'<option value="P4" >4</option>'
+																+'<option value="P5" >5</option>'
+																+'<option value="P6" >6</option>'
+																+'<option value="P8" >8</option>'
+																+'<option value="P9" >9</option>'
+																+'<option value="P10" >10</option>'
+																+'<option value="P12" >12</option>'
+																+'<option value="P13" >13</option>'
+																+'<option value="P14L" >14</option>'
+																+'<option value="P15 >15</option>'
+																+'<option value="P16" >16</option>'
+																+'<option value="P18" >18</option>'
+														}
+														else if(disList[i].getAttribute('value') == "Q5") {
+																wardCover.innerHTML =
+																'<option value="null" selected="">Chọn Phường / Xã</option>'
+																+'<option value="P1" >1</option>'
+																+'<option value="P2" >2</option>'
+																+'<option value="P3" >3</option>'
+																+'<option value="P4" >4</option>'
+																+'<option value="P5" >5</option>'
+																+'<option value="P6" >6</option>'
+																+'<option value="P7" >7</option>'
+																+'<option value="P8" >8</option>'
+																+'<option value="P9" >9</option>'
+																+'<option value="10" >10</option>'
+																+'<option value="P11" >11</option>'
+																+'<option value="P12L" >12</option>'
+																+'<option value="P13" >13</option>'
+																+'<option value="P14" >14</option>'
+														}
+														else if(disList[i].getAttribute('value') == "Q6") {
+																wardCover.innerHTML =
+																'<option value="null" selected="">Chọn Phường / Xã</option>'
+																+'<option value="P1" >1</option>'
+																+'<option value="P2" >2</option>'
+																+'<option value="P3" >3</option>'
+																+'<option value="P4" >4</option>'
+																+'<option value="P5" >5</option>'
+																+'<option value="P6" >6</option>'
+																+'<option value="P7" >7</option>'
+																+'<option value="P8" >8</option>'
+																+'<option value="P9" >9</option>'
+																+'<option value="P10" >10</option>'
+																+'<option value="P11" >11</option>'
+																+'<option value="P12" >12</option>'
+																+'<option value="P113" >13</option>'
+																+'<option value="P14" >14</option>'
+														}
+														else if(disList[i].getAttribute('value') == "Q7") {
+																wardCover.innerHTML =
+																'<option value="null" selected="">Chọn Phường / Xã</option>'
+																+'<option value="PTTD" >Tân Thuận Đông</option>'
+																+'<option value="PTTT" >Tân Thuận Tây</option>'
+																+'<option value="PTK" >Tây kiểng</option>'
+																+'<option value="PTH" >Tân Hưng</option>'
+																+'<option value="PTQ" >Tân Quy</option>'
+																+'<option value="PTP" >Tân Phú</option>'
+																+'<option value="PBT" >Bình Thuận</option>'
+																+'<option value="PPT" >Phú Thuận </option>'
+																+'<option value="PPM" >Phú Mỹ</option>'
+														}
+														else if(disList[i].getAttribute('value') == "Q8") {
+																wardCover.innerHTML =
+																'<option value="null" selected="">Chọn Phường / Xã</option>'
+																+'<option value="PXC" >Xóm Củi</option>'
+																+'<option value="PHP" >Hưng Phú</option>'
+																+'<option value="PBA" >Bình An</option>'
+																+'<option value="PCH" >Chánh Hưng</option>'
+																+'<option value="PRO" >Rạch Ông</option>'
+														}
+														else if(disList[i].getAttribute('value') == "Q9") {
+																wardCover.innerHTML =
+																'<option value="null" selected="">Chọn Phường / Xã</option>'
+																+'<option value="PHP" >Hiệp Phú</option>'
+																+'<option value="PLB" >Long Bình</option>'
+																+'<option value="PLP" >Long Phước</option>'
+																+'<option value="PLTM" >Long Thạnh Mỹ</option>'
+																+'<option value="PLT" >Long Trường</option>'
+																+'<option value="PPH" >Phú Hữu</option>'
+																+'<option value="PPB" >Phước Bình</option>'
+																+'<option value="PPLA" > Phước Long A</option>'
+																+'<option value="PPLB" >Phước Long B</option>'
+																+'<option value="PTP" >Tân Phú</option>'
+																+'<option value="PTNPA" >Tăng Nhơn Phú A</option>'
+																+'<option value="PTNPB" >Tăng Nhơn Phú B</option>'
+																+'<option value="PTT" >Trường Thạnh</option>'
+														}
+														else if(disList[i].getAttribute('value') == "Q10") {
+																wardCover.innerHTML =
+																'<option value="null" selected="">Chọn Phường / Xã</option>'
+																+'<option value="P1" >1</option>'
+																+'<option value="P2" >2</option>'
+																+'<option value="P4" >4</option>'
+																+'<option value="P5" >5</option>'
+																+'<option value="P6" >6</option>'
+																+'<option value="P7" >7</option>'
+																+'<option value="P8" >8</option>'
+																+'<option value="P9" >9</option>'
+																+'<option value="P10" >10</option>'
+																+'<option value="P11" >11</option>'
+																+'<option value="P12" >12</option>'
+																+'<option value="P13" >13</option>'
+																+'<option value="P14" >14</option>'
+																+'<option value="P15" >15</option>'
+														}
+														else if(disList[i].getAttribute('value') == "Q11") {
+																wardCover.innerHTML =
+																'<option value="null" selected="">Chọn Phường / Xã</option>'
+																+'<option value="P1" >1</option>'
+																+'<option value="P2" >2</option>'
+																+'<option value="P3" >3</option>'
+																+'<option value="P4" >4</option>'
+																+'<option value="P5" >5</option>'
+																+'<option value="P6" >6</option>'
+																+'<option value="P7" >7</option>'
+																+'<option value="P8" >8</option>'
+																+'<option value="P9" >9</option>'
+																+'<option value="P10" >10</option>'
+																+'<option value="P11" >11</option>'
+																+'<option value="P12" >12</option>'
+																+'<option value="P13" >13</option>'
+																+'<option value="P14" >14</option>'
+																+'<option value="P15" >15</option>'
+																+'<option value="P16" >16</option>'
+														}
+														else if(disList[i].getAttribute('value') == "Q12") {
+																wardCover.innerHTML =
+																'<option value="null" selected="">Chọn Phường / Xã</option>'
+																+'<option value="PAPD" >An Phú Đông</option>'
+																+'<option value="PDHT" >Đông Hưng Thuận</option>'
+																+'<option value="PHT" >Hiệp Thành</option>'
+																+'<option value="PTCH" >Tân Chánh Hiệp</option>'
+																+'<option value="PTHT" >Tân Hưng Thuận</option>'
+																+'<option value="PTTH" >Tân Thới Hiệp</option>'
+																+'<option value="PTTN" >Tân Thới Nhất</option>'
+																+'<option value="PTL" >Thạnh Lộc</option>'
+																+'<option value="PTX" >Thạnh Xuân</option>'
+																+'<option value="PTA" >Thới An</option>'
+																+'<option value="PTMT" >Trung Mỹ Tây</option>'
+														}
+														else if(disList[i].getAttribute('value') == "QBT") {
+																wardCover.innerHTML =
+																'<option value="null" selected="">Chọn Phường / Xã</option>'
+																+'<option value="P1" >1</option>'
+																+'<option value="P2" >2</option>'
+																+'<option value="P3" >3</option>'
+																+'<option value="P5" >5</option>'
+																+'<option value="P6" >6</option>'
+																+'<option value="P7" >7</option>'
+																+'<option value="P11" >11</option>'
+																+'<option value="P12" >12</option>'
+																+'<option value="P13" >13</option>'
+																+'<option value="P14" >14</option>'
+																+'<option value="P15" >15</option>'
+																+'<option value="P17" >17</option>'
+																+'<option value="P19" >19</option>'
+																+'<option value="P21" >21</option>'
+																+'<option value="P22" >22</option>'
+																+'<option value="P24" >24</option>'
+																+'<option value="P25" >25</option>'
+																+'<option value="P26" >26</option>'
+																+'<option value="P27" >27</option>'
+																+'<option value="P28" >28</option>'
+														}
+														else if(disList[i].getAttribute('value') == "QBTA") {
+																wardCover.innerHTML =
+																'<option value="null" selected="">Chọn Phường / Xã</option>'
+																+'<option value="P1" >1</option>'
+																+'<option value="P2" >2</option>'
+																+'<option value="P3" >3</option>'
+																+'<option value="P4" >4</option>'
+																+'<option value="P5" >5</option>'
+																+'<option value="P6" >6</option>'
+																+'<option value="P7" >7</option>'
+																+'<option value="P8" >8</option>'
+																+'<option value="P9" >9</option>'
+																+'<option value="P10" >10</option>'
+																+'<option value="P11" >11</option>'
+																+'<option value="P12" >12</option>'
+																+'<option value="P13" >13</option>'
+																+'<option value="P14" >14</option>'
+																+'<option value="P15" >15</option>'
+																+'<option value="PAL" >An Lạc</option>'
+																+'<option value="PALA" >An Lạc A</option>'
+																+'<option value="PBHH" >Bình Hưng Hòa</option>'
+																+'<option value="PBHHA" >Bình Hưng Hòa A</option>'
+																+'<option value="PBHHB" >Bình Hưng Hòa B</option>'
+																+'<option value="PBTD" >Bình Trị Đông</option>'
+																+'<option value="PBTDA" >Bình Trị Đông A</option>'
+																+'<option value="PBTDB" >Bình Trị Đông B</option>'
+																+'<option value="PTT" >Tân Tạo</option>'
+																+'<option value="PTTA" >Tân Tạo A</option>'
+														}
+														else if(disList[i].getAttribute('value') == "QGV") {
+																wardCover.innerHTML =
+																'<option value="null" selected="">Chọn Phường / Xã</option>'
+																+'<option value="P1" >1</option>'
+																+'<option value="P3" >3</option>'
+																+'<option value="P4" >4</option>'
+																+'<option value="P5 >5</option>'
+																+'<option value="P7" >7</option>'
+																+'<option value="P10" >10</option>'
+																+'<option value="P11" >11</option>'
+																+'<option value="P12" >12</option>'
+																+'<option value="P13" >13</option>'
+																+'<option value="P14" >14</option>'
+																+'<option value="P15" >15</option>'
+																+'<option value="P16" >16</option>'
+																+'<option value="P17" >17</option>'
+																+'<option value="P6" >6</option>'
+																+'<option value="P8" >8</option>'
+																+'<option value="P9" >9</option>'
+														}
+														else if(disList[i].getAttribute('value') == "QPN") {
+																wardCover.innerHTML =
+																'<option value="null" selected="">Chọn Phường / Xã</option>'
+																+'<option value="P1" >1</option>'
+																+'<option value="P2" >2</option>'
+																+'<option value="P3" >3</option>'
+																+'<option value="P5" >5</option>'
+																+'<option value="P6" >6</option>'
+																+'<option value="P7" >7</option>'
+																+'<option value="P11" >11</option>'
+																+'<option value="P12 >12</option>'
+																+'<option value="P13" >13</option>'
+																+'<option value="P14" >14</option>'
+																+'<option value="P15" >15</option>'
+																+'<option value="P17" >17</option>'
+														}
+														else if(disList[i].getAttribute('value') == "QTB") {
+																wardCover.innerHTML =
+																'<option value="null" selected="">Chọn Phường / Xã</option>'
+																+'<option value="P1" >1</option>'
+																+'<option value="P2" >2</option>'
+																+'<option value="P3" >3</option>'
+																+'<option value="P5" >5</option>'
+																+'<option value="P6" >6</option>'
+																+'<option value="P7" >7</option>'
+																+'<option value="P8" >8</option>'
+																+'<option value="P9" >9</option>'
+																+'<option value="P10" >10</option>'
+																+'<option value="P11" >11</option>'
+																+'<option value="P12" >12</option>'
+																+'<option value="P13" >13</option>'
+																+'<option value="P14" >14</option>'
+																+'<option value="P15" >15</option>'
+														}
+														else if(disList[i].getAttribute('value') == "QTD") {
+																wardCover.innerHTML =
+																'<option value="null" selected="">Chọn Phường / Xã</option>'
+																+'<option value="PAK" >An Khánh</option>'
+																+'<option value="PALD" >An Lợi Đông</option>'
+																+'<option value="PAP" >An Phú</option>'
+																+'<option value="PBC" >Bình Chiểu</option>'
+																+'<option value="PBT" >Bình Thọ</option>'
+																+'<option value="PBTD" >Bình Trưng Đông</option>'
+																+'<option value="PBTT" >Bình Trưng Tây</option>'
+																+'<option value="PCL" >Cát lái</option>'
+																+'<option value="PHBC" >Hiệp Bình Chánh</option>'
+																+'<option value="PHBP" >Hiệp Bình Phước</option>'
+																+'<option value="PHP" >Hiệp Phú</option>'
+																+'<option value="PLC" >Linh Chiểu</option>'
+																+'<option value="PLD" >Linh Đông</option>'
+																+'<option value="PLT" >Linh Tây</option>'
+																+'<option value="PLT" >Linh Trung</option>'
+																+'<option value="PLX" >Linh Xuân</option>'
+																+'<option value="PLB" >Long Bình</option>'
+																+'<option value="PLP" >Long Phước</option>'
+																+'<option value="PLTM" >Long Thạnh Mỹ</option>'
+																+'<option value="PLT" >Long Trường</option>'
+																+'<option value="PPH" >Phú Hữu</option>'
+																+'<option value="PPB" >Phước Bình</option>'
+																+'<option value="PPLA" >Phước Long A</option>'
+																+'<option value="PPLB" >Phước Long B</option>'
+																+'<option value="PTB" >Tam bình</option>'
+																+'<option value="PTP" >Tam Phú</option>'
+																+'<option value="PTNPA" >Tăng Nhơn Phú A</option>'
+																+'<option value="PTNPB" >Tăng Nhơn Phú B</option>'
+																+'<option value="PTP" >Tân Phú</option>'
+																+'<option value="PTML" >Thạnh Mỹ Lợi</option>'
+																+'<option value="PTD" >Thảo Điền</option>'
+																+'<option value="PTT" >Thủ Thiêm</option>'
+																+'<option value="PTT" >Trường Thạnh</option>'
+																+'<option value="PTT" >Trường Thọ</option>'
+														}
+														else if(disList[i].getAttribute('value') == "HBC") {
+																wardCover.innerHTML =
+																'<option value="null" selected="">Chọn Phường / Xã</option>'
+																+'<option value="PAPT" >An Phú Tây</option>'
+																+'<option value="PBC" >Bình Chánh</option>'
+																+'<option value="PBH" >Bình Hưng</option>'
+																+'<option value="PBL" >Bình Lợi</option>'
+																+'<option value="PDP" >Đa Phước</option>'
+																+'<option value="PHL" >Hưng Long</option>'
+																+'<option value="PLMX" >Lê Minh Xuân</option>'
+																+'<option value="PPVH" >Phạm Văn Hai</option>'
+																+'<option value="PPP" >Phong Phú</option>'
+																+'<option value="PQD" >Quy Đức</option>'
+																+'<option value="PTK" >Tân Kiên</option>'
+																+'<option value="PTN" >Tân Nhựt</option>'
+																+'<option value="PTQT" >Tân Quý Tây</option>'
+																+'<option value="PVLA" >Vĩnh Lộc A</option>'
+																+'<option value="PVLB" >Vĩnh Lộc B</option>'
+														}
+														else if(disList[i].getAttribute('value') == "QTP") {
+																wardCover.innerHTML =
+																'<option value="null" selected="">Chọn Phường / Xã</option>'
+																+'<option value="PHT" >Hiệp Tân</option>'
+																+'<option value="PHT" >Hòa Thạnh</option>'
+																+'<option value="PPTH" >Phú Thọ Hòa</option>'
+																+'<option value="PPT" >Phú Trung</option>'
+																+'<option value="PSK" >Sơn Kỳ</option>'
+																+'<option value="PTQ" >Tân Quý</option>'
+																+'<option value="PTSN" >Tân Sơn Nhì</option>'
+																+'<option value="PTT" >Tân Thành</option>'
+																+'<option value="PTT" >Tân Thới Hòa</option>'
+																+'<option value="PTT" >Tây Thạnh</option>'
+														}
+														else if(disList[i].getAttribute('value') == "HCC") {
+																wardCover.innerHTML =
+																'<option value="null" selected="">Chọn Phường / Xã</option>'
+																+'<option value="XANT" >An Nhơn Tây</option>'
+																+'<option value="XAP" >An Phú</option>'
+																+'<option value="XBM" >Bình Mỹ</option>'
+																+'<option value="XHM" >Hòa Phú</option>'
+																+'<option value="XND" >Nhuận Đức</option>'
+																+'<option value="XPVC" >Phạm Văn Cội</option>'
+																+'<option value="XPHD >Phú Hòa Đông</option>'
+																+'<option value="XPMH" >Phú Mỹ Hưng</option>'
+																+'<option value="XPH" >Phước Hiệp</option>'
+																+'<option value="XPT" >Phước Thạnh</option>'
+																+'<option value="XPVA" >Phước Vĩnh An</option>'
+																+'<option value="XTAH" >Tân An Hội</option>'
+																+'<option value="XTPT" >Tân Phú Trung</option>'
+																+'<option value="XTTD" >Tân Thạnh Đông</option>'
+																+'<option value="XTTT" >Tân Thạnh Tây</option>'
+																+'<option value="XTTH" >Tân Thông Hội</option>'
+																+'<option value="XTM" >Thái Mỹ</option>'
+																+'<option value="XTA" >Trung An</option>'
+																+'<option value="XTHL" >Trung Hạ Lập</option>'
+																+'<option value="XTLT" >Trung Lập Thượng</option>'
+														}
+														else if(disList[i].getAttribute('value') == "HHM") {
+																wardCover.innerHTML =
+																'<option value="null" selected="">Chọn Phường / Xã</option>'
+																+'<option value="XBD" >Bà Điểm</option>'
+																+'<option value="XDT" >Đông Thạnh</option>'
+																+'<option value="XNB" >Nhị bình</option>'
+																+'<option value="XTTN" >Tân Thới Nhì</option>'
+																+'<option value="XTX" >Tân Xuân</option>'
+																+'<option value="XTTT >Thới Tam Thôn</option>'
+																+'<option value="XTC" >Trung Chánh</option>'
+																+'<option value="XXTD" >Xuân Thới Đông</option>'
+																+'<option value="XXTT" >Xuân Thới Xuân</option>'
+																+'<option value="XXTT" >Xuân Thới Thượng</option>'
+														}
+														else if(disList[i].getAttribute('value') == "HNB") {
+																wardCover.innerHTML =
+																'<option value="null" selected="">Chọn Phường / Xã</option>'
+																+'<option value="XHP" >Hiệp Phước</option>'
+																+'<option value="XLT" >Long Thới</option>'
+																+'<option value="XND" >Nhơn Đức</option>'
+																+'<option value="XPX" >Phú Xuân</option>'
+																+'<option value="XPK" >Phước Kiến</option>'
+																+'<option value="XPL" >Phước Lộc</option>'
+														}
+													}
+												}
+											}
+										</script>
+									</select>
 								</div>
 							</div>
-						</div>
-						<div class="paymentmothod">
-							<div class="title_paymentmethod">
-								<h2>Phương thức thanh toán</h2>
+							<div class="address">
+								<input type="text" name="address" id="address" value placeholder="Nhập địa chỉ của bạn" style="border: 1px silver solid; border-radius: 4px; width: 100%; height: 45px;font-size: 18px; font-family: SVN-Futura; padding-left: 20px;">
 							</div>
-							<div class="box_paymentmethod" >
-								<div class="box-input_paymentmethod">
-									<input type="radio" name="box-input_paymentmethod"">
+							<div class="pay-pc">
+								<div class="shippingmethod">
+									<div class="title_boxshippingmethod">
+										<h2>Phương thức vận chuyển</h2>
+									</div>
+									<div class="box_shippingmethod" style="border: 1px silver solid; border-radius: 4px; width: 100%;height: 200px;">
+										
+										<div class="box_shippingmethod-icon">
+											<i class="fa fa-archive" aria-hidden="true"></i>
+										</div>
+									
+										<div class="box_shippingmethod-title">
+											<p>Vui lòng chọn tỉnh / thành để có danh sách phương thức vận chuyển.</p>
+										</div>
+									</div>
 								</div>
-								<div class="box-icon_paymentmethod">
-									<i class="fa fa-money" aria-hidden="true"></i>
+								<div class="paymentmothod">
+									<div class="title_paymentmethod">
+										<h2>Phương thức thanh toán</h2>
+									</div>
+									<div class="box_paymentmethod" >
+										<div class="box-input_paymentmethod">
+											<input type="radio" name="box-input_paymentmethod">
+										</div>
+										<div class="box-icon_paymentmethod">
+											<i class="fa fa-money" aria-hidden="true"></i>
+										</div>
+										<div class="box-title_paymentmethod">
+											<p>Thanh toán khi giao hàng (COD)</p>
+										</div>
+									</div>
 								</div>
-								<div class="box-title_paymentmethod">
-									<p>Thanh toán khi giao hàng (COD)</p>
+								<div class="bottom-page1">
+									<div class="return-cart">
+										<a href="#">Giỏ hàng</a>
+									</div>
+									<div class="submit-form">
+										<input type="submit" name="Hoàn tất" id="submit" value="Hoàn tất đơn hàng">
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="bottom-page1">
-							<div class="return-cart">
-								<a href="#">Giỏ hàng</a>
-							</div>
-							<div class="submit-form">
-								<input type="submit" name="Hoàn tất" id="submit" value="Hoàn tất đơn hàng">
-							</div>
-						</div>
-					</table>
-				</form>
+						</table>
+					</form>
+				</div>
 			</div>
 		</div>
-		   
-		<div class="page2">
-			<div class="order">
-				<div class="product">
-					<div class="product-img">
-						<img src="/assets/img/dep_gucci_web_slide_sandal_black_like_auth/1.jpg" alt="product_1" width="90px" height="auto">
-					</div>
-					<div class="product-title">
+		<!-- <div class="product-pay">
+			<div class="product-pay-heading">
+				<div class="product-pay-img">
+					<img src="/assets/img/dep_sieu_cap_nam_nu/dep_balenciaga_pool_slide_black_white/1.jpg" alt="product_1" width="90px" height="auto">
+				</div>
+				<div class="product-pay-info">
+					<div class="product-pay-title">
 						<h4>DÉP GUCCI WEB SLIDE SANDAL BLACK LIKE AUTH</h4>
 					</div>
-					<div class="product-size">
-						<h5>38</h5>
-					</div>
-					<div class="product-price">
-						<h5>898.000 ₫</h5>
-					</div>
-				</div>
-				<div class="page2-voucher">
-					<div class="page2-voucher__input">
-						<input type="text" name="voucher" id="voucher" value placeholder=" MÃ GIẢM GIÁ">
-					</div>
-					</hr style="color: silver;">
-					<div class="page2-voucher__submit">
-						<input type="submit" name="submit" id="submit" value="Sử Dụng" style="background-color:silver; text-align: center; width: 99px; height: 44px;">
-					</div>
-				</div>
-				<div class="div-page2__bill">
-					<div class="page2-bill__price">
-						<div class="bill-price__title">
-							<h4>Tạm tính</h4>
+					<div class="product-pay-body">
+						<div class="product-pay-size">
+							<h5>38</h5>
 						</div>
-						<div class="bill-price__money">
-							<h4>898.000 ₫</h4>
-						</div>
-					</div>
-					<div class="page2-transport__fee">
-						<div class="transport-fee__title">
-							<h4>Phí vận chuyển</h4>
-						</div>
-						<div class="transport-fee__money">
-							<h4>---</h4>
-						</div>
-					</div>
-					<div class="page2-intomoney">
-						<div class="intomoney-title">
-							<h4>Tổng cộng</h4>
-						</div>
-						<div class="intomoney-money">
-							<h4>898.000 ₫</h4>
+						<div class="product-pay-price">
+							<h5>898.000 ₫</h5><span class="x">x</span><span id="quantity-pay">2</span>
 						</div>
 					</div>
 				</div>
 			</div>
+		</div> -->
+		<div class="col-lg-6 col-xs-12">
+			<div class="page2">
+				<div class="order">
+					<div class="products-pay">
+					</div>
+					<div class="page2-voucher">
+						<div class="page2-voucher__input">
+							<input type="text" name="voucher" id="voucher" value placeholder=" MÃ GIẢM GIÁ">
+						</div>
+						</hr style="color: silver;">
+						<div class="page2-voucher__submit">
+							<input type="submit" name="submit" id="submit" value="Sử Dụng" style="background-color:silver; text-align: center; width: 99px; height: 44px;">
+						</div>
+					</div>
+					<div class="div-page2__bill">
+						<div class="page2-bill__price">
+							<div class="bill-price__title">
+								<h4>Tạm tính</h4>
+							</div>
+							<div class="bill-price__money">
+								<h4>898.000₫</h4>
+							</div>
+						</div>
+						<div class="page2-transport__fee">
+							<div class="transport-fee__title">
+								<h4>Phí vận chuyển</h4>
+							</div>
+							<div class="transport-fee__money">
+								<h4>---</h4>
+							</div>
+						</div>
+						<div class="page2-intomoney">
+							<div class="intomoney-title">
+								<h4>Tổng cộng</h4>
+							</div>
+							<div class="intomoney-money">
+								<h4>898.000₫</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pay-mobi">
+					<div class="shippingmethod">
+						<div class="title_boxshippingmethod">
+							<h2>Phương thức vận chuyển</h2>
+						</div>
+						<div class="box_shippingmethod" style="border: 1px silver solid; border-radius: 4px; width: 100%;height: 200px;">
+							
+							<div class="box_shippingmethod-icon">
+								<i class="fa fa-archive" aria-hidden="true"></i>
+							</div>
+						
+							<div class="box_shippingmethod-title">
+								<p>Vui lòng chọn tỉnh / thành để có danh sách phương thức vận chuyển.</p>
+							</div>
+						</div>
+					</div>
+					<div class="paymentmothod">
+						<div class="title_paymentmethod">
+							<h2>Phương thức thanh toán</h2>
+						</div>
+						<div class="box_paymentmethod" >
+							<div class="box-input_paymentmethod">
+								<input type="radio" name="box-input_paymentmethod">
+							</div>
+							<div class="box-icon_paymentmethod">
+								<i class="fa fa-money" aria-hidden="true"></i>
+							</div>
+							<div class="box-title_paymentmethod">
+								<p>Thanh toán khi giao hàng (COD)</p>
+							</div>
+						</div>
+					</div>
+					<div class="bottom-page1">
+						<div class="return-cart">
+							<a href="#">Giỏ hàng</a>
+						</div>
+						<div class="submit-form">
+							<input type="submit" name="Hoàn tất" id="submit" value="Hoàn tất đơn hàng">
+						</div>
+					</div>
+				</div>
+			</div>
+			
 		</div>
 	</div>
    
+	<script>
+		document.querySelector('.products-pay').innerHTML = '<div class="product-pay"><div class="product-pay-heading"><div class="product-pay-img"><img src="'+sessionStorage.imgPro+'" alt="product_1" width="90px" height="auto"></div><div class="product-pay-info"><div class="product-pay-title"><h4>'+sessionStorage.titlePro+'</h4></div><div class="product-pay-body"><div class="product-pay-size"><h5>'+sessionStorage.sizePro+'</h5></div><div class="product-pay-price"><h5>'+sessionStorage.pricePro+'</h5><span class="x">x</span><span id="quantity-pay">'+sessionStorage.quantityPro+'</span></div></div></div></div></div>';
+		
+		var tempPay = document.querySelector('.bill-price__money h4');
+		var totalPay = document.querySelector('.intomoney-money h4');
+		var strPrice = sessionStorage.pricePro;
+		var indexCharNotNumber = findCharNotNumber(strPrice);
+		
+		while(indexCharNotNumber != -1) {
+			strPrice = strPrice.replace(strPrice[indexCharNotNumber], '');
+			indexCharNotNumber = findCharNotNumber(strPrice);
+		}
+		
+
+		tempPay.innerHTML = totalPay.innerHTML = (parseInt(strPrice) * sessionStorage.quantityPro).toLocaleString() + '₫';
+
+
+
+		
+		function findCharNotNumber(str) {
+			for(var i = 0; i < str.length; i++) {
+				if(str[i] > '9' || str[i] < '0') {return i;}
+			}
+			return -1;
+		}
+	</script>
+	<script src="/assets/bootstrap5/js/bootstrap.js"></script>
 </body>
 </html>

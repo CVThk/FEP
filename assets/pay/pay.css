@@ -8,29 +8,26 @@ body{
     font-family: SVN-Futura;
 }
 .main-formcart{
-    display: flex;
+    padding: 30px 0;
 }
 .page1{
-    width: 50%;
+    width: 80%;
     height: auto;
-    margin-top: 30px;
-    margin-left: 205px;
+    margin: 0 10%;
     font-size: 20px;
 }
+
 .page2{
-    width: 50%;
-    height: auto;
-    border-left: 1px black solid;
-    }
+    width: 80%;
+    margin: 0 10%;
+}
 .top-page1__logo img{
     display: block;
     width: 90px;
     height: auto;
-    margin-left: 37px;
 }
 .top-page1__direction{
     padding-bottom: 10px;
-    padding-left: 35px;
     display: flex;
 }
 .top-page1__direction a{
@@ -46,12 +43,10 @@ body{
 }
 .title-page1 h4{
     padding-bottom: 10px;
-    padding-left: 35px;
 }
 .sigin-page1{
     display: flex;
     padding-bottom: 20px;
-    padding-left: 35px;
 }
 .sigin-page1 a{
     text-decoration: none;
@@ -60,43 +55,35 @@ body{
 
 .form-page1 form {
     padding-bottom: 20px;
-    padding-left: 35px;  
 }
 .form-page1 form input{
     margin-bottom:  13px;
 }
-.province{
-    display: inline-block;
+.cover-list {
+    display: flex;
+}
+.cover-item {
     border: 1px silver solid;
     border-radius: 4px;
-    width: 150px;
-    height: 45px;
+    width: 30%;
+    height: 60px;
     font-size: 15px;
     padding: 0 0.93333em;
-    margin-right: 18px;
+    margin-bottom: 13px;
+    margin-right: 5%;
 }
-.province label{
+.cover-item:last-child {margin-right: 0;}
+.cover-item label{
     display: inline;
 }
-.district{
-    display: inline-block;
-    border: 1px silver solid;
-    border-radius: 4px;
-    width: 150px;
-    height: 45px;
-    font-size: 15px;
-    padding: 0 0.93333em;
-    margin-right: 18px;
+.cover-item label {
+    font-size: 16px;
 }
-.wards{
-    display: inline-block;
-    border: 1px silver solid;
+.cover-item select {
+    max-width: 100%;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.1);
     border-radius: 4px;
-    width: 150px;
-    height: 45px;
-    font-size: 15px;
-    padding: 0 0.93333em;  
-    margin-bottom: 15px;
 }
 .shippingmethod{
     text-align: center;
@@ -120,7 +107,7 @@ i.fa.fa-archive {
 .box_paymentmethod{
     border: 1px silver solid;
     border-radius: 4px;
-    width:575px;
+    width: 100%;
     height: 75px;
     display: flex;
     padding-left: 10px;
@@ -134,120 +121,128 @@ i.fa.fa-archive {
     width: 20px;
     height: 30px;
     margin-top: 1em;
-    margin-left: 20px;
 }
 .box-icon_paymentmethod i{
     width: 23px;
     height: 30px;
     margin-top: 1.23em;
-    margin-left: 15px;
 }
 .box-title_paymentmethod p{
     margin-top: 1em;
-    margin-left: 15px;
+}
+.bottom-page1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .bottom-page1 a{
     text-decoration: none;
     color: dodgerblue;
-    float: left;
     margin-top: 35px;
 }
 .bottom-page1 input{
     border: 1px skyblue solid;
     border-radius: 4px;
-    float: right;
-    margin-right: 120px;
-    margin-top: 25px;
-    width: 164px;
     height: 57px;
     font-size: 15px;
     background-color: skyblue;
 }
 
-.product-img img{
+
+
+.products-pay  {
+    height: 400px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+.product-pay {
+    
+}
+.product-pay-heading {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+.product-pay-img img{
     border: 1px silver solid;
     border-radius: 4px;
-    margin-top: 53px;
-    margin-left: 45px;
-    float: left;
 }
-.product-title{
-    float: left;
-    margin-top: 70px;
-    margin-left: 20px;
-    margin-bottom: 22px;
+.product-pay-info {
+    margin-left: 40px;
 }
-.product-size{
-    float: left;
-    margin-top: 92px;
-    margin-left: -180px;
+.product-pay-title {
+    flex: 1;
+}
+.product-pay-title h4 {
+    font-size: 18px;
+    font-weight: 500;
+}
+.product-pay-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.product-pay-size h5 {
     color: silver;
-    margin-bottom: 22px;
+    font-size: 16px;
 }
-.product-price h5{
-    float: right;
-    margin-top: 70px;
-    margin-right: 200px;
-    margin-bottom: 22px;
+.x {
+    margin-left: 10px;
+}
+#quantity-pay {
+   
+}
+.product-pay-price {
+    display: flex;
+    align-items: center;
+}
+.product-pay-price h5{
+    font-size: 16px;
 }
 .page2-voucher{
-    clear: both;
+    display: flex;
+    margin-top: 30px;
+}
+.page2-voucher__input {
+    width: 70%;
 }
 .page2-voucher__input input{
-    margin-left: 43px;
-    margin-top: 30px;
+    flex: 1;
     border: 1px silver solid;
     border-radius: 4px;
-    width: 335px;
+    width: 100%;
     height: 44px;
     margin-right: 15px;
-    float: left;
 }
-
+.page2-voucher__submit {
+    width: 28%;
+    margin-left: 2%;
+}
 .page2-voucher__submit input{
-    margin-top: 30px;
     border: 1px silver solid;
     border-radius: 4px;
 }
-.div-page2__bill{
-    clear: both;
+
+
+
+.div-page2__bill {
+    margin-top: 20px;
 }
-.page2-bill__price{
-    margin-left: 43px;
-    margin-top: 40px;
-}
-.bill-price__title h4{
-    float: left;
-}
-.bill-price__money{
-    float: right;
-    margin-right: 255px;
-}
-.page2-transport__fee{
-    clear: both;
-    margin-left: 43px;
-    margin-top: 40px;
-}
-.transport-fee__title{
-    margin-top: 15px;
-    float: left;
-}
-.transport-fee__money{
-    float: right;
-    margin-right: 255px;
-    margin-top: 15px;
-}
+
+.page2-bill__price,
+.page2-transport__fee,
 .page2-intomoney{
-    clear: both;
-    margin-left: 43px;
-    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
 }
-.intomoney-title {
-    float: left;
-    margin-top: 15px;
+.page2-bill__price h4,
+.page2-transport__fee h4,
+.page2-intomoney h4 {
+    font-size: 18px;
 }
-.intomoney-money{
-    float: right;
-    margin-right: 255px;
-    margin-top: 15px;
+
+.pay-mobi {
+    display: none;
 }

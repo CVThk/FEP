@@ -505,6 +505,7 @@ input[name="rSlide"] {position: absolute; visibility: hidden;}
 .product__price {
     display: flex;
     justify-content: center;
+    align-items: center;
     font-size: 20px;
 }
 .product__price-current {
