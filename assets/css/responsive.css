@@ -249,4 +249,14 @@
     .pay-mobi {
         display: block;
     }
+    #SDT,
+    #email,
+    .form-name > input,
+    #customer_shipping_province,
+    #customer_shipping_district,
+    #customer_shipping_wards,
+    #address {
+        font-size: 14px;
+    }
+
 }

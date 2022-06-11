@@ -169,6 +169,7 @@ i.fa.fa-archive {
 }
 .product-pay-info {
     margin-left: 40px;
+    flex: 1;
 }
 .product-pay-title {
     flex: 1;
@@ -176,6 +177,12 @@ i.fa.fa-archive {
 .product-pay-title h4 {
     font-size: 18px;
     font-weight: 500;
+    height: 18px;
+    line-height: 18px;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
 }
 .product-pay-body {
     display: flex;
@@ -245,4 +252,9 @@ i.fa.fa-archive {
 
 .pay-mobi {
     display: none;
+}
+
+.submit-form > a > input {
+    text-align: center;
+    cursor: pointer;
 }

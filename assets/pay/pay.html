@@ -35,24 +35,24 @@
 					<form action="Nhập thông tin đặt hàng">
 						<table>
 							<div class="form-name">
-								<input type="text" name="Họ và tên" value placeholder="Nhập họ và tên" style="border: 1px silver solid; border-radius: 4px;width: 100%;height: 45px;font-size: 18px;font-family: SVN-Futura; padding-left: 20px;">
+								<input type="text" name="Họ và tên" value placeholder="Nhập họ và tên" style="border: 1px silver solid; border-radius: 4px;width: 100%;height: 45px;font-family: SVN-Futura; padding-left: 20px;">
 							</div>
 							<div class="form-email" style="display: flex;">
-								<input type="email" name="email" id="email" value placeholder="Nhập email của bạn" style="border: 1px silver solid; border-radius: 4px;width: 60%;height: 45px;font-size: 18px;font-family: SVN-Futura; padding-left: 20px;">
-								<input type="number" name="SDT" id="SDT" value placeholder="Số điện thoại" style="border: 1px silver solid; border-radius: 4px; width: 38%; height: 45px;font-size: 18px;font-family: SVN-Futura; padding-left: 20px; margin-left: 2%;" >
+								<input type="email" name="email" id="email" value placeholder="Nhập email của bạn" style="border: 1px silver solid; border-radius: 4px;width: 60%;height: 45px;font-family: SVN-Futura; padding-left: 20px;">
+								<input type="number" name="SDT" id="SDT" value placeholder="Số điện thoại" style="border: 1px silver solid; border-radius: 4px; width: 38%; height: 45px;font-family: SVN-Futura; padding-left: 20px; margin-left: 2%;" >
 							</div>
 							
 							<div class="cover-list">
 								<div class="cover-item">
 									<label class="field-province" for="customer_shipping_province">Tỉnh / thành:  </label>
-									<select name="District" id="customer_shipping_province" onclick="districtF()">
+									<select name="District" id="customer_shipping_province" onchange="districtF(),wardsF()">
 										<option value="null" selected="">Chọn tỉnh / thành </option>
 										<option value="HCM">Hồ Chí Minh</option>
 									</select>
 								</div>
 								<div class="cover-item">
 									<label class="field-district" for="customer_shipping_district"> Quận / Huyện:  </label>
-									<select name="district" id="customer_shipping_district" onclick="wardsF()">
+									<select name="district" id="customer_shipping_district" onchange="wardsF()">
 										<option value="null" selected="">Chọn Quận / Huyện</option>
 										<script>
 											function districtF() {
@@ -533,7 +533,7 @@
 								</div>
 							</div>
 							<div class="address">
-								<input type="text" name="address" id="address" value placeholder="Nhập địa chỉ của bạn" style="border: 1px silver solid; border-radius: 4px; width: 100%; height: 45px;font-size: 18px; font-family: SVN-Futura; padding-left: 20px;">
+								<input type="text" name="address" id="address" value placeholder="Nhập địa chỉ của bạn" style="border: 1px silver solid; border-radius: 4px; width: 100%; height: 45px; font-family: SVN-Futura; padding-left: 20px;">
 							</div>
 							<div class="pay-pc">
 								<div class="shippingmethod">
@@ -572,7 +572,7 @@
 										<a href="#">Giỏ hàng</a>
 									</div>
 									<div class="submit-form">
-										<input type="submit" name="Hoàn tất" id="submit" value="Hoàn tất đơn hàng">
+										<a href="/index.html"><input name="Hoàn tất" class="complete" id="submit" value="Hoàn tất đơn hàng"></a>
 									</div>
 								</div>
 							</div>
@@ -612,7 +612,7 @@
 						</div>
 						</hr style="color: silver;">
 						<div class="page2-voucher__submit">
-							<input type="submit" name="submit" id="submit" value="Sử Dụng" style="background-color:silver; text-align: center; width: 99px; height: 44px;">
+							<input type="submit" name="submit" id="use" value="Sử Dụng" style="background-color:silver; text-align: center; width: 99px; height: 44px;">
 						</div>
 					</div>
 					<div class="div-page2__bill">
@@ -679,7 +679,7 @@
 							<a href="#">Giỏ hàng</a>
 						</div>
 						<div class="submit-form">
-							<input type="submit" name="Hoàn tất" id="submit" value="Hoàn tất đơn hàng">
+							<a href="/index.html"><input name="Hoàn tất" class="complete" id="submit" value="Hoàn tất đơn hàng"></a>
 						</div>
 					</div>
 				</div>
@@ -689,29 +689,76 @@
 	</div>
    
 	<script>
-		document.querySelector('.products-pay').innerHTML = '<div class="product-pay"><div class="product-pay-heading"><div class="product-pay-img"><img src="'+sessionStorage.imgPro+'" alt="product_1" width="90px" height="auto"></div><div class="product-pay-info"><div class="product-pay-title"><h4>'+sessionStorage.titlePro+'</h4></div><div class="product-pay-body"><div class="product-pay-size"><h5>'+sessionStorage.sizePro+'</h5></div><div class="product-pay-price"><h5>'+sessionStorage.pricePro+'</h5><span class="x">x</span><span id="quantity-pay">'+sessionStorage.quantityPro+'</span></div></div></div></div></div>';
-		
-		var tempPay = document.querySelector('.bill-price__money h4');
-		var totalPay = document.querySelector('.intomoney-money h4');
-		var strPrice = sessionStorage.pricePro;
-		var indexCharNotNumber = findCharNotNumber(strPrice);
-		
-		while(indexCharNotNumber != -1) {
-			strPrice = strPrice.replace(strPrice[indexCharNotNumber], '');
-			indexCharNotNumber = findCharNotNumber(strPrice);
+		var vPay = sessionStorage.valuePay;
+		if(vPay == 0) {
+			payRightAway();
+		} else {payAll();}
+
+		function payAll() {
+			var sl = sessionStorage.Sl;
+			var srcImgs = sessionStorage.SrcImgs.split(',');
+			var nameProducts = sessionStorage.NameProducts.split(',');
+			var sizeProducts = sessionStorage.SizeProducts.split(',');
+			var priceProducts = sessionStorage.PriceProducts.split(',');
+			var quantitys = sessionStorage.Quantitys.split(',');
+
+			var contentP = '';
+			var tempPay = document.querySelector('.bill-price__money h4');
+			var totalPay = document.querySelector('.intomoney-money h4');
+			var sum = 0;
+			for(var i = 0; i < sl; i++) {
+				contentP += '<div class="product-pay"><div class="product-pay-heading"><div class="product-pay-img"><img src="'+srcImgs[i]+'" alt="product_1" width="90px" height="auto"></div><div class="product-pay-info"><div class="product-pay-title"><h4>'+nameProducts[i]+'</h4></div><div class="product-pay-body"><div class="product-pay-size"><h5>'+sizeProducts[i]+'</h5></div><div class="product-pay-price"><h5>'+priceProducts[i]+'</h5><span class="x">x</span><span id="quantity-pay">'+quantitys[i]+'</span></div></div></div></div></div>';
+
+
+				var strPrice = priceProducts[i];
+				var indexCharNotNumber = findCharNotNumber(strPrice);
+				while(indexCharNotNumber != -1) {
+					strPrice = strPrice.replace(strPrice[indexCharNotNumber], '');
+					indexCharNotNumber = findCharNotNumber(strPrice);
+				}
+				
+				sum += parseInt(strPrice) * quantitys[i];
+			}
+			document.querySelector('.products-pay').innerHTML = contentP;
+			tempPay.innerHTML = totalPay.innerHTML = sum.toLocaleString() + '₫';
 		}
 		
 
-		tempPay.innerHTML = totalPay.innerHTML = (parseInt(strPrice) * sessionStorage.quantityPro).toLocaleString() + '₫';
 
-
-
+		function payRightAway() {
+			document.querySelector('.products-pay').innerHTML = '<div class="product-pay"><div class="product-pay-heading"><div class="product-pay-img"><img src="'+sessionStorage.imgPro+'" alt="product_1" width="90px" height="auto"></div><div class="product-pay-info"><div class="product-pay-title"><h4>'+sessionStorage.titlePro+'</h4></div><div class="product-pay-body"><div class="product-pay-size"><h5>'+sessionStorage.sizePro+'</h5></div><div class="product-pay-price"><h5>'+sessionStorage.pricePro+'</h5><span class="x">x</span><span id="quantity-pay">'+sessionStorage.quantityPro+'</span></div></div></div></div></div>';
 		
+			var tempPay = document.querySelector('.bill-price__money h4');
+			var totalPay = document.querySelector('.intomoney-money h4');
+			var strPrice = sessionStorage.pricePro;
+			var indexCharNotNumber = findCharNotNumber(strPrice);
+			
+			while(indexCharNotNumber != -1) {
+				strPrice = strPrice.replace(strPrice[indexCharNotNumber], '');
+				indexCharNotNumber = findCharNotNumber(strPrice);
+			}
+			
+			tempPay.innerHTML = totalPay.innerHTML = (parseInt(strPrice) * sessionStorage.quantityPro).toLocaleString() + '₫';
+		}
+
 		function findCharNotNumber(str) {
 			for(var i = 0; i < str.length; i++) {
 				if(str[i] > '9' || str[i] < '0') {return i;}
 			}
 			return -1;
+		}
+
+
+		var completePay = document.getElementsByClassName('complete');
+		for(var i = 0; i < completePay.length; i++) {
+			completePay[i].onclick = function() {
+				cartSrcImgs = sessionStorage.CartSrcImgs = [];
+				cartNameProducts = sessionStorage.CartNameProducts = [];
+				cartSizeProducts = sessionStorage.CartSizeProducts = [];
+				cartPriceProducts = sessionStorage.CartPriceProducts = [];
+				cartQuantitys = sessionStorage.CartQuantitys = [];
+				cartSL = sessionStorage.CartSL = 0;
+			}
 		}
 	</script>
 	<script src="/assets/bootstrap5/js/bootstrap.js"></script>
