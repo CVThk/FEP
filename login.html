@@ -11,13 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/fonts/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./assets/fonts/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.4-web/css/all.css">
     <title>Login Page</title>
 </head>
 <body>
     <form id="form-login" name="form" action="/index.html" >
         <div class="header">
             <div id="back-home">
-                <!-- <a href="./index.html"><i title="Back to home" class="ti-back-left"></i></a> -->
                 <a href="./index.html"><img src="./assets/logo/logo.png"/></a>
             </div>
         </div>
@@ -26,32 +27,78 @@
                 <li id="itemLogin" class="activeStateUser">Login</li>
                 <li id="itemRegister">Register</li>
             </ul>
-            <div class="input">
+            <div id="body-login" class="show">
                 <div id="input-account" class="input-item">
-                    <label for="email-account">Email</label>
-                    <input type="email" name="" id="email-account" placeholder="Email@gmail.com">
+                    <div class="input-item-cover">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <input type="email" name="" id="email-account" placeholder="Email@gmail.com">
+                    </div>
+                    <span class="hide">Email phải thuộc dạng 'email@gmail.com'!</span>
                 </div>
                 <div id="input-password" class="input-item">
-                    <label for="password">Password</label>
-                    <input type="password" required name="" id="password" placeholder="&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF">
+                    <div class="input-item-cover">
+                        <i class="fas fa-key"></i>
+                        <input type="password" required name="" id="password" placeholder="&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF">
+                    </div>
+                    <span class="hide">Password ít nhất 10 ký tự!</span>
                 </div>
                 <div id="forgetPass">
                     <a href="#">Forget password?</a>
                 </div>
-                <div class="clauses">
-                    <input type="checkbox" id="agree">
-                    <label for="agree">I agree to <a href="#" id="term">terms</a> and <a href="#" id="condition">conditinos</a></label>
+                <div class="cover-clauses">
+                    <div class="clauses">
+                        <input type="checkbox" id="agree">
+                        <label for="agree">I agree to <a href="#" id="term">terms</a> and <a href="#" id="condition">conditinos</a></label>
+                    </div>
+                    <span class="hide">Required!</span>
                 </div>
                 <div id="login">
                     <input type="button" value="LOGIN">
                 </div>
             </div>
+            <div id="body-register" class="hide">
+                <div id="input-account-register" class="input-item">
+                    <div class="input-item-cover">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <input type="email" name="" id="email-register" placeholder="Email@gmail.com">
+                    </div>
+                    <span class="hide">Email phải thuộc dạng 'email@gmail.com'!</span>
+                </div>
+                <div id="input-password-register" class="input-item">
+                    <div class="input-item-cover">
+                        <i class="fas fa-key"></i>
+                        <input type="password" required name="" id="password-register" placeholder="Your password">
+                    </div>
+                    <span class="hide">Password ít nhất 10 ký tự!</span>
+                </div>
+                <div id="input-password-register-re" class="input-item">
+                    <div class="input-item-cover">
+                        <i class="fas fa-key"></i>
+                        <input type="password" required name="" id="password-register-re" placeholder="Re-enter your password">
+                    </div>
+                    <span class="hide" id="length">Password ít nhất 10 ký tự!</span>
+                    <span class="hide" id="re-enter">Password không trùng khớp!</span>
+                </div>
+                <div class="cover-clauses">
+                    <div class="clauses">
+                        <input type="checkbox" id="agree-register">
+                        <label for="agree-register">I agree to <a href="#" id="term">terms</a> and <a href="#" id="condition">conditinos</a></label>
+                    </div>
+                    <span class="hide">Required!</span>
+                </div>
+                <div id="register">
+                    <input type="button" value="REGISTER">
+                </div>
+            </div>
         </div>
     </form>
-    <div id="form-success" class="text-center hide">
-        <i class="ti-check"></i> Thành Công
+    <div id="form-success-login" class="text-center hide">
+        <i class="ti-check"></i> Welcome Back
+    </div>
+    <div id="form-success-register" class="text-center hide">
+        <i class="ti-check"></i> Successful
     </div>
 </body>
-<script src="./js/js-login.js"></script>
+<script src="./assets/js/js-login.js"></script>
 
 </html>

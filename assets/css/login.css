@@ -24,9 +24,9 @@ body {
 }
 
 #form-login {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.6);
     width: 30%;
-    margin: 100px auto;
+    margin: 30px auto;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2);
@@ -41,15 +41,6 @@ body {
 }
 #back-home a {
     text-decoration: none;
-    /* color: #fff;
-    display: block;
-    height: 100%;
-    background-color: rgba(246, 9, 9, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    width: 80px; */
 }
 #back-home a i {
     font-size:  30px;
@@ -61,6 +52,7 @@ body {
 }
 .body {
     padding:  20px 10px;
+    position: relative;
 }
 #state-user {
     list-style: none;
@@ -81,16 +73,20 @@ body {
     border-bottom: 2px solid rgb(25, 242, 94);
 }
 
-.input {
-    margin: 20px 20px 10px 20px;
+#body-login,
+#body-register {
+    margin: 50px 20px 10px 20px;
+    min-height: 400px;
 }
-.input label {
+#body-login label,
+#body-register label {
     display: block;
     color: #fff;
     font-size: 20px;
     font-weight: 500;
 }
-.input input {
+#body-login input,
+#body-register input {
     width: 100%;
     outline: none;
     padding: 2px 0 2px 6px;
@@ -98,11 +94,26 @@ body {
     background-color: transparent;
     color: #fff;
     border: none;
-    border-bottom: 1px solid #fff;
+    /* border-bottom: 1px solid #fff; */
 }
 .input-item {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
+.input-item-cover {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #fff;
+}
+.input-item-cover i {
+    color: #fff;
+    margin-right: 8px;
+}
+.input-item span,
+.cover-clauses span {
+    color: red;
+    font-size: 18px;
+}
+
 
 ::placeholder {
     color: #fff;
@@ -115,8 +126,13 @@ body {
     color: rgb(94, 243, 44);
     font-weight: 500;
 }
-
-.clauses {
+#body-login .clauses input,
+#body-register .clauses input {
+    width: 20px;
+    height: 20px;
+}
+#body-login .clauses,
+#body-register .clauses {
     display: flex;
     align-items: center;
     margin-top: 10px;
@@ -124,33 +140,42 @@ body {
 .clauses a {
     color: rgb(94, 243, 44)
 }
-#agree {
+#agree,
+#agree-register {
     width: 20px;
     height: 20px;
     margin-right: 8px;
 }
-.clauses label {
+#body-login .clauses label,
+#body-register .clauses label {
     flex: 1;
     font-size: 16px;
     font-weight: 450;
 }
 
-#login {
+#login,
+#register {
     width: 50%;
     margin: 30px auto 0 auto;
+    position: absolute;
+    bottom: 20px;
+    left: 25%;
 }
-#login input {
+#login input,
+#register input {
     background-color: rgba(126, 253, 211, 0.7);
     border: none;
     padding: 10px;
 }
-#login input:hover {
+#login input:hover,
+#register input:hover {
     background-color: rgba(126, 253, 211, 1);
     color: #333;
     font-weight: 500;
 }
 
-#form-success {
+#form-success-login,
+#form-success-register {
     position: fixed;
     top: 2%;
     left: 43%;
@@ -161,7 +186,8 @@ body {
     border-left: 10px solid rgb(68, 245, 98);
     padding: 10px 0;
 }
-#form-success i {
+#form-success-login i,
+#form-success-register i {
     background-color: rgb(68, 245, 98);
     padding: 4px;
     border-radius: 50%;
@@ -169,4 +195,7 @@ body {
 }
 .hide {
     display: none;
+}
+.show {
+    display: block;
 }
