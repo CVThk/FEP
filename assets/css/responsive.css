@@ -259,4 +259,29 @@
         font-size: 14px;
     }
 
+
+    .shopping-cart {
+        width: 96%;
+    }
+    .title {
+        font-size: 20px;
+        color: #000;
+        font-weight: 600;
+    }
+    .description.cart span {
+        font-size: 14px;
+    }
+    .product__describe-custom.cart .product__describe-custom-reduced,
+    .product__describe-custom.cart .product__describe-custom-input,
+    .product__describe-custom.cart .product__describe-custom-increase {
+        height: 40px;
+        font-size: 20px;
+    }
+    .total-price {
+        margin-right: 5px;
+    }
+    .total-price h6,
+    .size {
+        font-size: 12px;
+    }
 }

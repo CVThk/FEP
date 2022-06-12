@@ -690,17 +690,31 @@
    
 	<script>
 		var vPay = sessionStorage.valuePay;
+		console.log(vPay)
 		if(vPay == 0) {
 			payRightAway();
 		} else {payAll();}
 
 		function payAll() {
-			var sl = sessionStorage.Sl;
-			var srcImgs = sessionStorage.SrcImgs.split(',');
-			var nameProducts = sessionStorage.NameProducts.split(',');
-			var sizeProducts = sessionStorage.SizeProducts.split(',');
-			var priceProducts = sessionStorage.PriceProducts.split(',');
-			var quantitys = sessionStorage.Quantitys.split(',');
+			// var sl = sessionStorage.Sl;
+			// var srcImgs = sessionStorage.SrcImgs.split(',');
+			// var nameProducts = sessionStorage.NameProducts.split(',');
+			// var sizeProducts = sessionStorage.SizeProducts.split(',');
+			// var priceProducts = sessionStorage.PriceProducts.split(',');
+			// var quantitys = sessionStorage.Quantitys.split(',');
+
+			var sl = sessionStorage.CartSL;
+			var srcImgs = sessionStorage.CartSrcImgs.split(',');
+			var nameProducts = sessionStorage.CartNameProducts.split(',');
+			var sizeProducts = sessionStorage.CartSizeProducts.split(',');
+			var priceProducts = sessionStorage.CartPriceProducts.split(',');
+			var quantitys = sessionStorage.CartQuantitys.split(',');
+			console.log(sl)
+			console.log(srcImgs)
+			console.log(nameProducts)
+			console.log(sizeProducts)
+			console.log(priceProducts)
+			console.log(quantitys)
 
 			var contentP = '';
 			var tempPay = document.querySelector('.bill-price__money h4');
@@ -726,11 +740,11 @@
 
 
 		function payRightAway() {
-			document.querySelector('.products-pay').innerHTML = '<div class="product-pay"><div class="product-pay-heading"><div class="product-pay-img"><img src="'+sessionStorage.imgPro+'" alt="product_1" width="90px" height="auto"></div><div class="product-pay-info"><div class="product-pay-title"><h4>'+sessionStorage.titlePro+'</h4></div><div class="product-pay-body"><div class="product-pay-size"><h5>'+sessionStorage.sizePro+'</h5></div><div class="product-pay-price"><h5>'+sessionStorage.pricePro+'</h5><span class="x">x</span><span id="quantity-pay">'+sessionStorage.quantityPro+'</span></div></div></div></div></div>';
+			document.querySelector('.products-pay').innerHTML = '<div class="product-pay"><div class="product-pay-heading"><div class="product-pay-img"><img src="'+sessionStorage.imgProRA+'" alt="product_1" width="90px" height="auto"></div><div class="product-pay-info"><div class="product-pay-title"><h4>'+sessionStorage.titleProRA+'</h4></div><div class="product-pay-body"><div class="product-pay-size"><h5>'+sessionStorage.sizeProRA+'</h5></div><div class="product-pay-price"><h5>'+sessionStorage.priceProRA+'</h5><span class="x">x</span><span id="quantity-pay">'+sessionStorage.quantityProRA+'</span></div></div></div></div></div>';
 		
 			var tempPay = document.querySelector('.bill-price__money h4');
 			var totalPay = document.querySelector('.intomoney-money h4');
-			var strPrice = sessionStorage.pricePro;
+			var strPrice = sessionStorage.priceProRA;
 			var indexCharNotNumber = findCharNotNumber(strPrice);
 			
 			while(indexCharNotNumber != -1) {
@@ -738,7 +752,7 @@
 				indexCharNotNumber = findCharNotNumber(strPrice);
 			}
 			
-			tempPay.innerHTML = totalPay.innerHTML = (parseInt(strPrice) * sessionStorage.quantityPro).toLocaleString() + '₫';
+			tempPay.innerHTML = totalPay.innerHTML = (parseInt(strPrice) * sessionStorage.quantityProRA).toLocaleString() + '₫';
 		}
 
 		function findCharNotNumber(str) {
@@ -752,12 +766,15 @@
 		var completePay = document.getElementsByClassName('complete');
 		for(var i = 0; i < completePay.length; i++) {
 			completePay[i].onclick = function() {
-				cartSrcImgs = sessionStorage.CartSrcImgs = [];
-				cartNameProducts = sessionStorage.CartNameProducts = [];
-				cartSizeProducts = sessionStorage.CartSizeProducts = [];
-				cartPriceProducts = sessionStorage.CartPriceProducts = [];
-				cartQuantitys = sessionStorage.CartQuantitys = [];
-				cartSL = sessionStorage.CartSL = 0;
+				if(vPay != 0) {
+					cartSrcImgs = sessionStorage.CartSrcImgs = [];
+					cartNameProducts = sessionStorage.CartNameProducts = [];
+					cartSizeProducts = sessionStorage.CartSizeProducts = [];
+					cartPriceProducts = sessionStorage.CartPriceProducts = [];
+					cartQuantitys = sessionStorage.CartQuantitys = [];
+					cartSL = sessionStorage.CartSL = 0;
+				}
+				
 			}
 		}
 	</script>

@@ -53,7 +53,7 @@ var cartSL;
 
 newCart();
 function newCart() {
-  console.log(sessionStorage.CartSL)
+  // console.log(sessionStorage.CartSL)
   if(sessionStorage.CartSL == undefined) {
     cartSL = 0;
     cartSrcImgs = [];
@@ -62,7 +62,7 @@ function newCart() {
     cartPriceProducts = [];
     cartQuantitys = [];
   } else {
-    console.log('gan gia tri')
+    // console.log('gan gia tri')
     cartSrcImgs = sessionStorage.CartSrcImgs.split(',');
     cartNameProducts = sessionStorage.CartNameProducts.split(',');
     cartSizeProducts = sessionStorage.CartSizeProducts.split(',');
@@ -77,14 +77,15 @@ function newCart() {
 showCart();
 
 function showCart() {
-    console.log('show')
-    console.log(cartSL)
-    console.log(cartSrcImgs)
-    console.log(cartNameProducts)
-    console.log(cartSizeProducts)
-    console.log(cartPriceProducts)
-    console.log(cartQuantitys)
+    // console.log('show')
+    // console.log(cartSL)
+    // console.log(cartSrcImgs)
+    // console.log(cartNameProducts)
+    // console.log(cartSizeProducts)
+    // console.log(cartPriceProducts)
+    // console.log(cartQuantitys)
     var cartListProduct = document.querySelector('.cart-list-product');
+    console.log(cartListProduct)
     var contentTam = cartListProduct.innerHTML;
     var content = '';
     for(var i = 0; i < cartSL; i++) {
@@ -107,12 +108,12 @@ function updateCart() {
   cartPriceProducts[cartSL] = sessionStorage.pricePro;
   cartQuantitys[cartSL] = sessionStorage.quantityPro;
   
-  console.log(cartSL)
-  console.log(cartSrcImgs[cartSL])
-  console.log(cartNameProducts[cartSL])
-  console.log(cartSizeProducts[cartSL])
-  console.log(cartPriceProducts[cartSL])
-  console.log(cartQuantitys[cartSL])
+  // console.log(cartSL)
+  // console.log(cartSrcImgs[cartSL])
+  // console.log(cartNameProducts[cartSL])
+  // console.log(cartSizeProducts[cartSL])
+  // console.log(cartPriceProducts[cartSL])
+  // console.log(cartQuantitys[cartSL])
   cartSL = parseInt(cartSL) + 1;
   var cartListProduct = document.querySelector('.cart-list-product');
   var contentTam = cartListProduct.innerHTML;
@@ -126,12 +127,12 @@ function updateCart() {
   sessionStorage.CartPriceProducts = cartPriceProducts;
   sessionStorage.CartQuantitys = cartQuantitys;
   sessionStorage.CartSL = cartSL;
-  console.log(sessionStorage.CartSL)
-  console.log(sessionStorage.CartSrcImgs)
-  console.log(sessionStorage.CartNameProducts)
-  console.log(sessionStorage.CartSizeProducts)
-  console.log(sessionStorage.CartPriceProducts)
-  console.log(sessionStorage.CartQuantitys)
+  // console.log(sessionStorage.CartSL)
+  // console.log(sessionStorage.CartSrcImgs)
+  // console.log(sessionStorage.CartNameProducts)
+  // console.log(sessionStorage.CartSizeProducts)
+  // console.log(sessionStorage.CartPriceProducts)
+  // console.log(sessionStorage.CartQuantitys)
 }
 
 // Ẩn/hiện no-product in cart
@@ -171,18 +172,18 @@ btnAdd.onclick = function() {
 }
 
 btnPay.onclick = function() {
-  btnPay.querySelector('a').href = '/assets/pay/pay.html';
+  btnPay.querySelector('a').href = '/pay/pay.html';
   var srcImg = document.getElementById('one').src;
   var nameProduct = document.querySelector('.product__describe-infor-name').querySelector('h1').innerText;
   var price = document.querySelector('.product__describe-infor-price--current').innerText;
   var numberProduct = document.querySelector('.product__describe-custom-input').value;
   var sizeProduct = document.querySelector('.button_size.active > h2').innerText;
 
-  sessionStorage.imgPro = srcImg;
-  sessionStorage.titlePro = nameProduct;
-  sessionStorage.sizePro = sizeProduct;
-  sessionStorage.pricePro = price;
-  sessionStorage.quantityPro = numberProduct;
+  sessionStorage.imgProRA = srcImg;
+  sessionStorage.titleProRA = nameProduct;
+  sessionStorage.sizeProRA = sizeProduct;
+  sessionStorage.priceProRA = price;
+  sessionStorage.quantityProRA = numberProduct;
 
   sessionStorage.valuePay = 0;
   
