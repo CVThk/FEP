@@ -258,3 +258,18 @@ i.fa.fa-archive {
     text-align: center;
     cursor: pointer;
 }
+
+
+#err {
+    color: var(--danger);
+    display: none;
+}
+#err div {
+    font-size: 18px;
+    font-weight: 600;
+}
+#err p {
+    margin: 0 0 0 20px;
+    padding: 0;
+    font-size: 16px;
+}

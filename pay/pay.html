@@ -535,6 +535,11 @@
 							<div class="address">
 								<input type="text" name="address" id="address" value placeholder="Nhập địa chỉ của bạn" style="border: 1px silver solid; border-radius: 4px; width: 100%; height: 45px; font-family: SVN-Futura; padding-left: 20px;">
 							</div>
+							<div id="err">
+								<div>*Lưu ý:</div>
+								<p>- Tên, email, số điện thoại, tỉnh, quận và phường không được bỏ trống.</p>
+								<p>- Email nhập đúng chuẩn, số điện thoại phải nhập chính xác.</p>
+							</div>
 							<div class="pay-pc">
 								<div class="shippingmethod">
 									<div class="title_boxshippingmethod">
@@ -845,6 +850,9 @@
 				}
 				if(cName == true && cEmail == true && cPhone == true && cProvince == true && cDistrict == true && cWard == true) {
 					document.querySelector('.submit-form a').setAttribute('href', '/index.html')
+				}
+				else {
+					document.getElementById('err').style.display = 'block';
 				}
 			}
 		}
