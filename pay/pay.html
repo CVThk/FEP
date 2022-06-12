@@ -557,7 +557,7 @@
 									</div>
 									<div class="box_paymentmethod" >
 										<div class="box-input_paymentmethod">
-											<input type="radio" name="box-input_paymentmethod">
+											<input type="radio" checked name="box-input_paymentmethod">
 										</div>
 										<div class="box-icon_paymentmethod">
 											<i class="fa fa-money" aria-hidden="true"></i>
@@ -572,7 +572,7 @@
 										<a href="#">Giỏ hàng</a>
 									</div>
 									<div class="submit-form">
-										<a href="/index.html"><input name="Hoàn tất" class="complete" id="submit" value="Hoàn tất đơn hàng"></a>
+										<a href="#"><input name="Hoàn tất" class="complete" id="submit" value="Hoàn tất đơn hàng"></a>
 									</div>
 								</div>
 							</div>
@@ -679,7 +679,7 @@
 							<a href="#">Giỏ hàng</a>
 						</div>
 						<div class="submit-form">
-							<a href="/index.html"><input name="Hoàn tất" class="complete" id="submit" value="Hoàn tất đơn hàng"></a>
+							<a href="#"><input name="Hoàn tất" class="complete" id="submit" value="Hoàn tất đơn hàng"></a>
 						</div>
 					</div>
 				</div>
@@ -690,7 +690,7 @@
    
 	<script>
 		var vPay = sessionStorage.valuePay;
-		console.log(vPay)
+		// console.log(vPay)
 		if(vPay == 0) {
 			payRightAway();
 		} else {payAll();}
@@ -763,9 +763,78 @@
 		}
 
 
+
+		var fName = document.querySelector('.form-name input');
+		var email = document.getElementById('email');
+		var sdt = document.getElementById('SDT');
+		var provinces = document.getElementById('customer_shipping_province');
+		var districts = document.getElementById('customer_shipping_district');
+		var wards = document.getElementById('customer_shipping_wards');
+
+		function checkFName() {
+			if(fName.value == '') {return false;}
+			return true;
+		}
+		function checkFEmail() {
+			if(email.value == '') {return false;}
+			if(!(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email.value))) {
+                return false;
+            }
+			return true;
+		}
+		function checkPhone() {
+			if(sdt.value.length < 10) {return false;}
+			return true;
+		}
+		function checkProvince() {
+			for(var i = 0; i < provinces.length; i++) {
+				if(provinces[i].selected) {
+					if(provinces[i].value == 'null') {return false;}
+				}
+			}
+			return true;
+		}
+		function checkDistrict() {
+			for(var i = 0; i < districts.length; i++) {
+				if(districts[i].selected) {
+					if(districts[i].value == 'null') {return false;}
+				}
+			}
+			return true;
+		}
+		function checkWard() {
+			for(var i = 0; i < wards.length; i++) {
+				if(wards[i].selected) {
+					if(wards[i].value == 'null') {
+						return false;
+					}
+				}
+			}
+			return true;
+		}
+
 		var completePay = document.getElementsByClassName('complete');
 		for(var i = 0; i < completePay.length; i++) {
 			completePay[i].onclick = function() {
+				var cName = checkFName();
+				var cEmail = checkFEmail();
+				var cPhone = checkPhone();
+				var cProvince = checkProvince();
+				var cDistrict = checkDistrict();
+				var cWard = checkWard();
+				if(cName == false) {fName.style.border = '1px solid red';}
+				else {fName.style.border = '1px solid silver'}
+				if(cEmail == false) {email.style.border = '1px solid red';}
+				else {email.style.border = '1px solid silver'}
+				if(cPhone == false) {sdt.style.border = '1px solid red';}
+				else {sdt.style.border = '1px solid silver'}
+
+				if(cProvince == false) {provinces.style.border = '1px solid red';}
+				else {provinces.style.border = 'none';}
+				if(cDistrict == false) {districts.style.border = '1px solid red';}
+				else {districts.style.border = 'none';}
+				if(cWard == false) {wards.style.border = '1px solid red';}
+				else {wards.style.border = 'none';}
 				if(vPay != 0) {
 					cartSrcImgs = sessionStorage.CartSrcImgs = [];
 					cartNameProducts = sessionStorage.CartNameProducts = [];
@@ -774,9 +843,15 @@
 					cartQuantitys = sessionStorage.CartQuantitys = [];
 					cartSL = sessionStorage.CartSL = 0;
 				}
-				
+				if(cName == true && cEmail == true && cPhone == true && cProvince == true && cDistrict == true && cWard == true) {
+					document.querySelector('.submit-form a').setAttribute('href', '/index.html')
+				}
 			}
 		}
+
+
+		
+
 	</script>
 	<script src="/assets/bootstrap5/js/bootstrap.js"></script>
 </body>
