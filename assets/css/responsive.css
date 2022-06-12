@@ -57,6 +57,9 @@
     .offset-2 {
         margin-left: 0;
     }
+    #form-login {
+        width: 50%;
+    }
 }
 
 /* Tablet */
@@ -283,5 +286,8 @@
     .total-price h6,
     .size {
         font-size: 12px;
+    }
+    #form-login {
+        width: 90%;
     }
 }
